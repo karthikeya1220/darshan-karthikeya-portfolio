@@ -1,0 +1,241 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=e9] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Campus" [ref=e10] [cursor=pointer]:
+          - /url: "#leadership"
+        - link "Projects" [ref=e11] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Skills" [ref=e12] [cursor=pointer]:
+          - /url: "#skills"
+      - link "Resume" [ref=e14] [cursor=pointer]:
+        - /url: /Darshan_Karthikeya_SDE_.pdf
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - generic [ref=e18]: Your Friendly Neighborhood Developer
+      - heading "D a r s h a n K a r t h i k e y a" [level=1] [ref=e26]:
+        - generic [ref=e27]: D
+        - generic [ref=e28]: a
+        - generic [ref=e29]: r
+        - generic [ref=e30]: s
+        - generic [ref=e31]: h
+        - generic [ref=e32]: a
+        - generic [ref=e33]: "n"
+        - generic [ref=e34]: K
+        - generic [ref=e35]: a
+        - generic [ref=e36]: r
+        - generic [ref=e37]: t
+        - generic [ref=e38]: h
+        - generic [ref=e39]: i
+        - generic [ref=e40]: k
+        - generic [ref=e41]: e
+        - generic [ref=e42]: "y"
+        - generic [ref=e43]: a
+      - paragraph [ref=e45]: I weave high-performance Web Architectures and deploy Applied AI models to catch bugs and build scalable platforms.
+      - generic:
+        - generic: Full Stack Web
+        - generic: AI / Machine Learning
+      - generic [ref=e46]:
+        - link "Deploy Web-Shooters" [ref=e47] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Contact HQ" [ref=e52] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e54]:
+      - heading "01. About Me" [level=2] [ref=e57]:
+        - generic [ref=e58]: "01."
+        - text: About Me
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - paragraph [ref=e63]: I am a Full Stack Developer and Applied AI Engineer with production experience building MERN and Next.js platforms.
+          - paragraph [ref=e66]: I've built AI-powered recruitment systems, wireframe-to-code generators, and real-time analytics dashboards. My journey focuses on system architecture, backend performance optimization, and end-to-end product delivery.
+          - paragraph [ref=e69]: Currently pursuing my B.Tech in Computer Science at IIITDM Kancheepuram (2022-2026). My experience spans scalable web systems, applied machine learning, and developer tooling.
+          - generic [ref=e70]:
+            - heading "Achievements & Milestones" [level=4] [ref=e71]
+            - list [ref=e72]:
+              - listitem [ref=e73]:
+                - generic [ref=e74]: 📝
+                - generic [ref=e75]: "IEEE Publication — Research paper accepted at TENCON 2026: \"Impact-Guided Slice Selection for Efficient Human-in-the-Loop Brain Tumor Segmentation\" (NeuroSlice)."
+              - listitem [ref=e76]:
+                - generic [ref=e77]: 🥇
+                - generic [ref=e78]: Hackathon Champion — 1st place at BugByte '25 & RetroRevamp '25; Top 5 out of 106 teams at VIT Hackathon.
+              - listitem [ref=e79]:
+                - generic [ref=e80]: 👨‍💻
+                - generic [ref=e81]: Lead Software Developer — Built the official IIITDM Placement Portal serving 500+ students and 30+ recruiters.
+              - listitem [ref=e82]:
+                - generic [ref=e83]: 🚀
+                - generic [ref=e84]: Technical Lead — Led development of the official IIITDM CSE Department website and Developers Club platform.
+              - listitem [ref=e85]:
+                - generic [ref=e86]: 💻
+                - generic [ref=e87]: Head Core (Tech Affairs) — Coordinated technical planning, code reviews, and mentored developers across institute platforms.
+              - listitem [ref=e88]:
+                - generic [ref=e89]: 🤖
+                - generic [ref=e90]: Summer of AI '26 — Selected to contribute to Viswam.ai's Telugu LLM initiative and AI product development.
+        - img "Portrait Illustration" [ref=e95]
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - heading "Professional Journey" [level=2] [ref=e99]
+        - paragraph [ref=e100]: A track record of shipping impactful software, optimizing backend performance, and contributing to AI research.
+      - generic [ref=e103]:
+        - generic [ref=e110]:
+          - generic [ref=e111]: Sep 2025 – Feb 2026
+          - heading "SDE Intern" [level=3] [ref=e112]
+          - paragraph [ref=e113]: SRNR IT Solutions
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - generic [ref=e116]: ✦
+              - generic [ref=e117]: Built Accounting and HRMS systems on MERN stack
+            - listitem [ref=e118]:
+              - generic [ref=e119]: ✦
+              - generic [ref=e120]: Designed REST APIs and CRUD workflows
+            - listitem [ref=e121]:
+              - generic [ref=e122]: ✦
+              - generic [ref=e123]: Handled concurrent requests for 70+ active users
+        - generic [ref=e130]:
+          - generic [ref=e131]: Jan 2025 – Sep 2025
+          - heading "SDE Intern / Data Intern" [level=3] [ref=e132]
+          - paragraph [ref=e133]: QuantaGlobal
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - generic [ref=e136]: ✦
+              - generic [ref=e137]: Built SAP monitoring platform tracking 300+ KPIs via REST APIs
+            - listitem [ref=e138]:
+              - generic [ref=e139]: ✦
+              - generic [ref=e140]: Developed HireNexa AI resume screening system reducing manual review by 65%
+            - listitem [ref=e141]:
+              - generic [ref=e142]: ✦
+              - generic [ref=e143]: Optimized backend latency by 35% using indexing, caching, and concurrent request handling
+            - listitem [ref=e144]:
+              - generic [ref=e145]: ✦
+              - generic [ref=e146]: Supported 500+ daily production API requests
+            - listitem [ref=e147]:
+              - generic [ref=e148]: ✦
+              - generic [ref=e149]: Delivered Health & Fitness App with live vitals dashboards
+            - listitem [ref=e150]:
+              - generic [ref=e151]: ✦
+              - generic [ref=e152]: Designed modular frontend components improving UX and maintainability
+        - generic [ref=e159]:
+          - generic [ref=e160]: Jun 2025 – Jul 2025
+          - heading "AI Research Contributor" [level=3] [ref=e161]
+          - paragraph [ref=e162]: Viswam.ai
+          - list [ref=e163]:
+            - listitem [ref=e164]:
+              - generic [ref=e165]: ✦
+              - generic [ref=e166]: Worked on Telugu Large Language Model datasets
+            - listitem [ref=e167]:
+              - generic [ref=e168]: ✦
+              - generic [ref=e169]: Built preprocessing pipelines for low-resource NLP
+            - listitem [ref=e170]:
+              - generic [ref=e171]: ✦
+              - generic [ref=e172]: Contributed to GenAI proof-of-concepts
+            - listitem [ref=e173]:
+              - generic [ref=e174]: ✦
+              - generic [ref=e175]: Supported experimentation and evaluation workflows
+    - generic [ref=e176]:
+      - generic [ref=e178]:
+        - heading "05. Campus Impact" [level=2] [ref=e179]:
+          - generic [ref=e180]: "05."
+          - text: Campus Impact
+        - paragraph [ref=e182]: Taking charge of digital transformation and leading technical teams at IIITDM.
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - heading "Lead Full Stack Developer" [level=3] [ref=e192]
+          - heading "Placement Cell IIITDM" [level=4] [ref=e193]
+          - generic [ref=e194]: Chennai, Tamil Nadu
+          - paragraph [ref=e198]: Designed, developed, and maintained the official placement portal serving 500+ students and 30+ recruiters, managing the complete software lifecycle from system architecture to deployment.
+        - generic [ref=e199]:
+          - heading "Technical Lead" [level=3] [ref=e203]
+          - heading "IIITDM Web Team" [level=4] [ref=e204]
+          - generic [ref=e205]: Chennai, Tamil Nadu
+          - paragraph [ref=e209]: Led development initiatives for the CSE Department website and Developers Club platform, improving platform usability, maintainability, and backend performance.
+        - generic [ref=e210]:
+          - heading "Head Core" [level=3] [ref=e215]
+          - heading "Technical Affairs IIITDM" [level=4] [ref=e216]
+          - generic [ref=e217]: Tech Development Team
+          - paragraph [ref=e221]: Spearheaded technical operations and development teams, overseeing campus-wide digital infrastructure and orchestrating technical events.
+    - generic [ref=e223]:
+      - heading "Featured Work" [level=2] [ref=e224]
+      - paragraph [ref=e225]: A selection of projects that showcase my capabilities in software architecture and Applied AI.
+    - generic [ref=e233]:
+      - heading "04. Testimonials" [level=2] [ref=e236]:
+        - generic [ref=e237]: "04."
+        - text: Testimonials
+      - generic [ref=e239]:
+        - generic [ref=e240]:
+          - paragraph [ref=e244]: "\"Darshan is an exceptional developer who bridges the gap between complex AI research and scalable web applications perfectly.\""
+          - generic [ref=e245]:
+            - heading "Technical Lead" [level=4] [ref=e246]
+            - paragraph [ref=e247]: QuantaGlobal
+        - generic [ref=e248]:
+          - paragraph [ref=e252]: "\"The HireNexa platform revolutionized our recruitment process. His ability to implement Gemini AI so seamlessly was impressive.\""
+          - generic [ref=e253]:
+            - heading "Product Manager" [level=4] [ref=e254]
+            - paragraph [ref=e255]: Recruitment Suite
+        - generic [ref=e256]:
+          - paragraph [ref=e260]: "\"A highly proactive engineer with a deep understanding of full-stack architecture and a passion for applied intelligence.\""
+          - generic [ref=e261]:
+            - heading "Senior Engineer" [level=4] [ref=e262]
+            - paragraph [ref=e263]: SRNR IT Solutions
+    - generic [ref=e264]:
+      - generic [ref=e265]:
+        - heading "Technical Arsenal" [level=2] [ref=e266]
+        - paragraph [ref=e267]: A comprehensive breakdown of my engineering capabilities and architectural foundations.
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - heading "Languages & Core" [level=3] [ref=e270]
+          - application [ref=e274]:
+            - generic [ref=e290]:
+              - generic [ref=e291]: TypeScript
+              - generic [ref=e293]: JavaScript
+              - generic [ref=e296]: Python
+              - generic [ref=e299]: SQL
+              - generic [ref=e302]: Algorithms
+        - generic [ref=e305]:
+          - heading "Architecture & Scale" [level=3] [ref=e306]
+          - application [ref=e310]:
+            - generic [ref=e326]:
+              - generic [ref=e327]: System Design
+              - generic [ref=e329]: Distributed Sys.
+              - generic [ref=e332]: Optimization
+              - generic [ref=e335]: Microservices
+              - generic [ref=e338]: Data Structures
+        - generic [ref=e341]:
+          - heading "Databases & Cloud" [level=3] [ref=e342]
+          - application [ref=e346]:
+            - generic [ref=e362]:
+              - generic [ref=e363]: PostgreSQL
+              - generic [ref=e365]: MongoDB
+              - generic [ref=e368]: Firebase
+              - generic [ref=e371]: AWS (EC2/S3)
+              - generic [ref=e374]: Docker/CI-CD
+        - generic [ref=e377]:
+          - heading "Testing & Reliability" [level=3] [ref=e378]
+          - application [ref=e382]:
+            - generic [ref=e398]:
+              - generic [ref=e399]: Jest
+              - generic [ref=e401]: Unit Testing
+              - generic [ref=e404]: Integration
+              - generic [ref=e407]: Automation
+              - generic [ref=e410]: Debugging
+    - generic [ref=e413]:
+      - generic [ref=e414]:
+        - generic [ref=e416]:
+          - heading "Let's Connect." [level=2] [ref=e417]
+          - paragraph [ref=e418]: I'm currently exploring new opportunities in Full Stack Development and Applied AI. Whether you have a question, a project idea, or just want to chat about tech, I'll try my best to get back to you!
+        - generic [ref=e420]:
+          - heading "Digital HQ" [level=3] [ref=e421]
+          - generic [ref=e422]:
+            - link [ref=e423] [cursor=pointer]:
+              - /url: mailto:darshankarthik05@gmail.com
+              - generic [ref=e429]:
+                - paragraph [ref=e430]: Email
+                - paragraph [ref=e431]: darshankarthik05@gmail.com
+            - generic [ref=e435]:
+              - link "GitHub" [ref=e436] [cursor=pointer]:
+                - /url: https://github.com/karthikeya1220
+              - link "LinkedIn" [ref=e441] [cursor=pointer]:
+                - /url: https://linkedin.com/in/darshan-karthikeya
+      - paragraph [ref=e448]: © 2026 Darshan Karthikeya. All rights reserved.
