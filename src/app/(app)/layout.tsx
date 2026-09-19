@@ -8,6 +8,16 @@ const ScrollToTop = dynamic(() =>
   import("@/components/scroll-to-top").then((mod) => mod.ScrollToTop)
 )
 
+const ReadingProgress = dynamic(() =>
+  import("@/components/reading-progress").then((mod) => mod.ReadingProgress)
+)
+
+const KeyboardShortcutHints = dynamic(() =>
+  import("@/components/keyboard-shortcut-hints").then(
+    (mod) => mod.KeyboardShortcutHints
+  )
+)
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     // References:
@@ -15,6 +25,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     // - https://base-ui.com/react/overview/quick-start#ios-26-safari
     <div className="group/layout relative isolate">
       <SiteHeader />
+      <ReadingProgress />
       <main className="max-w-screen overflow-x-clip px-2">{children}</main>
       <SiteFooterCad />
       <div
@@ -26,6 +37,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </div>
       <SiteBottomNav />
       <ScrollToTop />
+      <KeyboardShortcutHints />
     </div>
   )
 }

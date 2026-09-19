@@ -15,7 +15,7 @@ export const USER: User = {
     "IEEE Publication at TENCON 2026.",
   ],
   address: "India",
-  phoneNumberB64: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  phoneNumberB64: "",
   emailB64: "ZGFyc2hhbmthcmViaGlrMDVAZ21haWwuY29t", // base64 encoded
   website: "https://darshan-karthikeya.vercel.app",
   jobTitle: "Full Stack Developer & Applied AI Engineer",
@@ -38,13 +38,13 @@ export const USER: User = {
 - Currently pursuing B.Tech in Computer Science at IIITDM Kancheepuram (2022-2026). My experience spans scalable web systems, applied machine learning, and developer tooling.
 - IEEE Publication — Research paper accepted at TENCON 2026: "Impact-Guided Slice Selection for Efficient Human-in-the-Loop Brain Tumor Segmentation" (NeuroSlice).
 `,
-  avatar: "https://avatars.githubusercontent.com/u/karthikeya1220",
-  avatarSketch: "",
+  avatar: "https://avatars.githubusercontent.com/u/169545053?v=4",
+  avatarSketch: "https://avatars.githubusercontent.com/u/169545053?v=4",
   avatarVariants: {
-    lightOff: "https://avatars.githubusercontent.com/u/karthikeya1220",
-    lightOn: "https://avatars.githubusercontent.com/u/karthikeya1220",
-    darkOff: "https://avatars.githubusercontent.com/u/karthikeya1220",
-    darkOn: "https://avatars.githubusercontent.com/u/karthikeya1220",
+    lightOff: "https://avatars.githubusercontent.com/u/169545053?v=4",
+    lightOn: "https://avatars.githubusercontent.com/u/169545053?v=4",
+    darkOff: "https://avatars.githubusercontent.com/u/169545053?v=4",
+    darkOn: "https://avatars.githubusercontent.com/u/169545053?v=4",
   },
   ogImage: "",
   namePronunciationUrl: "",

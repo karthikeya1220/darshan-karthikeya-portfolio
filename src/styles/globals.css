@@ -521,6 +521,10 @@
     text-rendering: optimizeLegibility;
   }
 
+  .dark body {
+    @apply dot-grid;
+  }
+
   /* Custom scrollbar styling. Thanks @shadcn-ui */
   ::-webkit-scrollbar {
     width: 5px;

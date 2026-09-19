@@ -1,7 +1,11 @@
 import { USER } from "@/features/portfolio/data/user"
-
+import { AvatarElectricEffect } from "./avatar-electric-effect"
+import { AvatarLights } from "./avatar-lights"
+import { AvatarLightsToggle } from "./avatar-lights-toggle"
 import { FlipSentences } from "./flip-sentences"
 import { VerifiedIcon } from "./verified-icon"
+
+const avatarVariants = USER.avatarVariants
 
 export function ProfileHeader() {
   return (
@@ -9,19 +13,12 @@ export function ProfileHeader() {
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
         <div className="screen-line-top mt-auto shrink-0 border-r border-line">
           <div className="mx-0.5 my-0.75 flex outline-none">
-            <div className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40">
-              <img
-                className="block size-full rounded-[inherit] object-cover select-none dark:hidden"
-                src={USER.avatarSketch}
-                alt="Avatar with sketch style in light mode"
-              />
-              <img
-                className="hidden size-full rounded-[inherit] object-cover select-none dark:block"
-                src={USER.avatar}
-                alt="Avatar in dark mode"
-              />
-              <div className="pointer-events-none absolute inset-0 rounded-[inherit] inset-ring-1 inset-ring-foreground/30 dark:inset-ring-foreground/10" />
-            </div>
+            <AvatarElectricEffect>
+              <div className="relative">
+                <AvatarLights variants={avatarVariants} />
+                <AvatarLightsToggle className="absolute inset-0 size-full cursor-pointer rounded-full" />
+              </div>
+            </AvatarElectricEffect>
           </div>
         </div>
       </div>

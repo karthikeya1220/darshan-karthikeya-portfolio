@@ -6,7 +6,7 @@ import {
 
 import type { Experience } from "@/features/portfolio/types/experiences"
 
-export const EXPERIENCES: Experience[] = [
+export const PROFESSIONAL_EXPERIENCES: Experience[] = [
   {
     id: "srnr-it-solutions",
     companyName: "SRNR IT Solutions",
@@ -23,10 +23,14 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Internship",
         icon: <CodeXmlIcon />,
-        description: `- Built Accounting and HRMS systems on MERN stack
-- Designed REST APIs and CRUD workflows
-- Handled concurrent requests for 70+ active users`,
+        description: `- Built and released mobile applications using React Native and TypeScript; shipped polished UI/UX across iOS and Android with strong attention to usability and product quality.
+- Developed backend services and APIs using Node.js and Express.js; worked with PostgreSQL, Redis, REST APIs, and third-party integrations.
+- Took features from concept through testing, deployment, and production support; maintained and improved products following launch; demonstrated strong ownership and adaptability.
+- Used AI-assisted development workflows to improve productivity; experimented with AI evaluation and observability for debugging and tracing.`,
         skills: ["React", "Node.js", "MongoDB", "Express.js", "REST APIs"],
+        metrics: [
+          { label: "Active users", value: "70+" },
+        ],
       },
     ],
   },
@@ -46,12 +50,10 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Internship",
         icon: <CodeXmlIcon />,
-        description: `- Built SAP monitoring platform tracking 300+ KPIs via REST APIs
-- Developed HireNexa AI resume screening system reducing manual review by 65%
-- Optimized backend latency by 35% using indexing, caching, and concurrent request handling
-- Supported 500+ daily production API requests
-- Delivered Health & Fitness App with live vitals dashboards
-- Designed modular frontend components improving UX and maintainability`,
+        description: `- Built polished product experiences across web and mobile using React, React Native, TypeScript, and JavaScript; took features from early concepts through implementation, testing, deployment, and production.
+- Developed supporting services and APIs using Node.js; worked with Supabase, PostgreSQL, REST APIs, and third-party integrations across multiple product initiatives.
+- Used AI-assisted development workflows (GitHub Copilot, ChatGPT) to improve delivery speed and productivity; built AI-enabled product capabilities for internal tools.
+- Made practical architecture and tooling decisions; brought structure and clarity to rapidly evolving products with incomplete requirements; managed multiple priorities with end-to-end ownership.`,
         skills: [
           "Next.js",
           "Node.js",
@@ -59,6 +61,11 @@ export const EXPERIENCES: Experience[] = [
           "REST APIs",
           "AI/ML",
           "Performance Optimization",
+        ],
+        metrics: [
+          { label: "Manual screening reduced", value: "65%" },
+          { label: "Daily API requests", value: "500+" },
+          { label: "Latency improvement", value: "35%" },
         ],
       },
     ],
@@ -80,14 +87,14 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Internship",
         icon: <BrainCircuitIcon />,
-        description: `- Worked on Telugu Large Language Model datasets
-- Built preprocessing pipelines for low-resource NLP
-- Contributed to GenAI proof-of-concepts
-- Supported experimentation and evaluation workflows`,
+        description: `- Built data processing pipelines using Python; supported backend services and integrations for LLM-powered product capabilities.`,
         skills: ["Python", "NLP", "LLM", "GenAI", "Data Processing"],
       },
     ],
   },
+]
+
+export const COLLEGE_EXPERIENCES: Experience[] = [
   {
     id: "placement-cell-iiitdm",
     companyName: "Placement Cell IIITDM",
@@ -106,6 +113,10 @@ export const EXPERIENCES: Experience[] = [
         description: `- Designed, developed, and maintained the official placement portal serving 500+ students and 30+ recruiters
 - Managed the complete software lifecycle from system architecture to deployment`,
         skills: ["Full Stack", "System Architecture", "Deployment"],
+        metrics: [
+          { label: "Students served", value: "500+" },
+          { label: "Recruiters onboarded", value: "30+" },
+        ],
       },
     ],
   },

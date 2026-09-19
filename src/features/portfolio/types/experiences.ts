@@ -19,6 +19,8 @@ export type ExperiencePosition = {
   skills?: string[]
   /** Whether the position is expanded by default in the UI. */
   isExpanded?: boolean
+  /** Key impact metrics for this position. */
+  metrics?: { label: string; value: string }[]
 }
 
 export type Experience = {

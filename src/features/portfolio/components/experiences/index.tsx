@@ -12,32 +12,59 @@ import {
   PanelTitle,
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
-import { EXPERIENCES } from "@/features/portfolio/data/experiences"
+import { PROFESSIONAL_EXPERIENCES, COLLEGE_EXPERIENCES } from "@/features/portfolio/data/experiences"
 import type { Experience } from "@/features/portfolio/types/experiences"
 
 import { ExperienceItem } from "./experience-item"
 
-const ID = "experience"
 const MAX = 3
 
-export function Experiences() {
+export function ProfessionalExperiences() {
   return (
-    <Panel id={ID}>
+    <ExperienceSection
+      id="professional-experience"
+      title="Professional Experience"
+      experiences={PROFESSIONAL_EXPERIENCES}
+    />
+  )
+}
+
+export function CollegeExperiences() {
+  return (
+    <ExperienceSection
+      id="college-experience"
+      title="College Club Experience"
+      experiences={COLLEGE_EXPERIENCES}
+    />
+  )
+}
+
+function ExperienceSection({
+  id,
+  title,
+  experiences,
+}: {
+  id: string
+  title: string
+  experiences: Experience[]
+}) {
+  return (
+    <Panel id={id}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Experience</a>
-          <PanelTitleCopy id={ID} />
+          <a href={`#${id}`}>{title}</a>
+          <PanelTitleCopy id={id} />
         </PanelTitle>
       </PanelHeader>
 
       <div className="pr-2 pl-4">
-        <ExperienceList experiences={EXPERIENCES.slice(0, MAX)} />
+        <ExperienceList experiences={experiences.slice(0, MAX)} />
       </div>
 
-      {EXPERIENCES.length > MAX && (
+      {experiences.length > MAX && (
         <Collapsible className="group/collapsible">
           <CollapsibleContent render={<div className="pr-2 pl-4" />}>
-            <ExperienceList experiences={EXPERIENCES.slice(MAX)} />
+            <ExperienceList experiences={experiences.slice(MAX)} />
           </CollapsibleContent>
 
           <div className="-mt-px flex items-center justify-center py-4">

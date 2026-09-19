@@ -5,6 +5,7 @@ import {
   MarsIcon,
   NonBinaryIcon,
   VenusIcon,
+  DownloadIcon,
 } from "lucide-react"
 
 import { USER } from "@/features/portfolio/data/user"
@@ -78,6 +79,21 @@ export function Overview() {
           <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
           <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
             {USER.pronouns}
+          </IntroItemContent>
+        </IntroItem>
+
+        <IntroItem className="sm:col-span-2">
+          <IntroItemIcon>
+            <DownloadIcon />
+          </IntroItemIcon>
+          <IntroItemContent>
+            <a
+              href="/vcard"
+              download
+              className="link"
+            >
+              Download contact card
+            </a>
           </IntroItemContent>
         </IntroItem>
       </PanelContent>

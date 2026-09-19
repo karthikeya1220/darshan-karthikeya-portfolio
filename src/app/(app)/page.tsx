@@ -8,20 +8,25 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { Awards } from "@/features/portfolio/components/awards"
 import { Blog } from "@/features/portfolio/components/blog"
 import { Certifications } from "@/features/portfolio/components/certifications"
+import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
-import { Experiences } from "@/features/portfolio/components/experiences"
+import { ProfessionalExperiences, CollegeExperiences } from "@/features/portfolio/components/experiences"
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions"
 import { Hello } from "@/features/portfolio/components/hello"
 import {
   Insights,
   InsightsSkeleton,
 } from "@/features/portfolio/components/insights"
+import { Now } from "@/features/portfolio/components/now"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
 import { SocialLinks } from "@/features/portfolio/components/social-links"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
+import { TechFilterProvider } from "@/features/portfolio/components/tech-filter-context"
+import { Testimonials } from "@/features/portfolio/components/testimonials"
 import { USER } from "@/features/portfolio/data/user"
+import { SectionReveal } from "@/components/section-reveal"
 
 export const metadata: Metadata = {
   alternates: {
@@ -34,7 +39,7 @@ export default function HomePage() {
     <>
       <JsonLdScript data={getProfilePageJsonLd()} />
 
-        <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
+      <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
         <div className="mx-auto md:max-w-3xl">
           <ProfileHeader />
           <Separator />
@@ -50,10 +55,15 @@ export default function HomePage() {
           <Blog />
           <Separator />
 
-          <TechStack />
+          <TechFilterProvider>
+            <TechStack />
+          </TechFilterProvider>
           <Separator />
 
-          <Experiences />
+          <ProfessionalExperiences />
+          <Separator />
+
+          <CollegeExperiences />
           <Separator />
 
           <Education />
@@ -66,6 +76,21 @@ export default function HomePage() {
           <Separator />
 
           <Certifications />
+          <Separator />
+
+          <SectionReveal>
+            <Testimonials />
+          </SectionReveal>
+          <Separator />
+
+          <SectionReveal>
+            <Contact />
+          </SectionReveal>
+          <Separator />
+
+          <SectionReveal>
+            <Now />
+          </SectionReveal>
           <Separator />
 
           <Suspense fallback={<InsightsSkeleton />}>

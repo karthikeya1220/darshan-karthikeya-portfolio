@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { addQueryParams } from "@/utils/url"
-import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react"
+import { BoxIcon, InfinityIcon, ExternalLinkIcon, ArrowRightIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
 import {
@@ -74,24 +74,43 @@ export function ProjectItem({
             </dl>
           </div>
 
-          <Tooltip>
-            <TooltipTrigger
-              render={
-                <a
-                  className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                  href={addQueryParams(project.link, UTM_PARAMS)}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Open project"
-                >
-                  <LinkIcon className="pointer-events-none size-4" />
-                </a>
-              }
-            />
-            <TooltipContent>
-              <p>Open project</p>
-            </TooltipContent>
-          </Tooltip>
+          <div className="flex items-center gap-1">
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <a
+                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                    href={`/projects/${project.id}`}
+                    aria-label={`View ${project.title} case study`}
+                  >
+                    <ArrowRightIcon className="pointer-events-none size-4" />
+                  </a>
+                }
+              />
+              <TooltipContent>
+                <p>View case study</p>
+              </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <a
+                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                    href={addQueryParams(project.link, UTM_PARAMS)}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open project source"
+                  >
+                    <ExternalLinkIcon className="pointer-events-none size-4" />
+                  </a>
+                }
+              />
+              <TooltipContent>
+                <p>Open source</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
         </div>
       </CollapsibleTrigger>
 

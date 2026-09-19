@@ -1,8 +1,11 @@
 import { differenceInMonths, parse } from "date-fns"
 import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
 
+import ReactMarkdown from "react-markdown"
+
 import { cn } from "@/lib/utils"
 import {
+  CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { IconTile } from "@/components/ui/icon-tile"
@@ -92,15 +95,41 @@ export function ExperiencePositionItem({
         </dl>
       </CollapsibleTrigger>
 
-      {Array.isArray(position.skills) && position.skills.length > 0 && (
-        <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
-          {position.skills.map((skill, index) => (
-            <li key={index} className="flex">
-              <Tag>{skill}</Tag>
-            </li>
-          ))}
-        </ul>
-      )}
+      <CollapsibleContent className="overflow-hidden">
+        <div className="space-y-4 pt-3 pl-9">
+          {position.description && (
+            <div className="typeset typeset-description [&_li]:ps-0.5 [&_ul]:ps-3.5">
+              <ReactMarkdown>{position.description}</ReactMarkdown>
+            </div>
+          )}
+
+          {Array.isArray(position.skills) && position.skills.length > 0 && (
+            <ul className="flex flex-wrap gap-1.5">
+              {position.skills.map((skill, index) => (
+                <li key={index} className="flex">
+                  <Tag>{skill}</Tag>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {Array.isArray(position.metrics) && position.metrics.length > 0 && (
+            <div className="flex flex-wrap gap-3">
+              {position.metrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className="flex items-baseline gap-1.5 text-sm"
+                >
+                  <span className="font-mono font-semibold text-foreground tabular-nums">
+                    {metric.value}
+                  </span>
+                  <span className="text-muted-foreground">{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </CollapsibleContent>
     </Collapsible>
   )
 }
