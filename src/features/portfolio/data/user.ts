@@ -17,7 +17,7 @@ export const USER: User = {
   address: "India",
   phoneNumberB64: "",
   emailB64: "ZGFyc2hhbmthcnRoaWswNUBnbWFpbC5jb20=", // base64 encoded
-  website: "",
+  website: "https://darshan-karthikeya.runs-on.dev",
   jobTitle: "Full Stack Developer & Applied AI Engineer",
   jobs: [
     {
