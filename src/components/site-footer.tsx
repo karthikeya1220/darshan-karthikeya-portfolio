@@ -56,7 +56,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     className="link-underline"
-                    href="https://openpanel.dev?utm_source=darshan-karthikeya.vercel.app&utm_medium=referral&utm_campaign=footer"
+                    href="https://openpanel.dev?utm_medium=referral&utm_campaign=footer"
                     target="_blank"
                     rel="noopener"
                   >

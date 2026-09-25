@@ -6,7 +6,7 @@ import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { Awards } from "@/features/portfolio/components/awards"
-import { Blog } from "@/features/portfolio/components/blog"
+
 import { Certifications } from "@/features/portfolio/components/certifications"
 import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
@@ -52,8 +52,7 @@ export default function HomePage() {
           <Hello />
           <Separator />
 
-          <Blog />
-          <Separator />
+
 
           <TechFilterProvider>
             <TechStack />

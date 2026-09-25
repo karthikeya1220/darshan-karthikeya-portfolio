@@ -16,8 +16,8 @@ export const USER: User = {
   ],
   address: "India",
   phoneNumberB64: "",
-  emailB64: "ZGFyc2hhbmthcmViaGlrMDVAZ21haWwuY29t", // base64 encoded
-  website: "https://darshan-karthikeya.vercel.app",
+  emailB64: "ZGFyc2hhbmthcnRoaWswNUBnbWFpbC5jb20=", // base64 encoded
+  website: "",
   jobTitle: "Full Stack Developer & Applied AI Engineer",
   jobs: [
     {

@@ -66,13 +66,6 @@ const MENU_LINKS: CommandLinkItem[] = [
     kind: "page",
     shortcut: "GH",
   },
-  {
-    title: "Blog",
-    href: "/blog",
-    kind: "page",
-    icon: <NewsIcon />,
-    shortcut: "GL",
-  },
 ]
 
 const PORTFOLIO_LINKS: CommandLinkItem[] = [
