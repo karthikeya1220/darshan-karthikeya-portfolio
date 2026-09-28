@@ -1,11 +1,11 @@
 import { urlToName } from "@/utils/url"
 import {
+  DownloadIcon,
   LinkIcon,
   MapPinIcon,
   MarsIcon,
   NonBinaryIcon,
   VenusIcon,
-  DownloadIcon,
 } from "lucide-react"
 
 import { USER } from "@/features/portfolio/data/user"
@@ -25,7 +25,7 @@ import { PhoneItem } from "./phone-item"
 
 export function Overview() {
   return (
-    <Panel className="screen-line-bottom-none">
+    <Panel id="overview" className="screen-line-bottom-none">
       <h2 className="sr-only">Overview</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
@@ -87,11 +87,7 @@ export function Overview() {
             <DownloadIcon />
           </IntroItemIcon>
           <IntroItemContent>
-            <a
-              href="/vcard"
-              download
-              className="link"
-            >
+            <a href="/vcard" download className="link">
               Download contact card
             </a>
           </IntroItemContent>

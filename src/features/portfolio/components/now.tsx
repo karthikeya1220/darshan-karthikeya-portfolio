@@ -1,8 +1,13 @@
-import { CodeIcon, BookOpenIcon, LightbulbIcon } from "lucide-react"
+import { BookOpenIcon, CodeIcon, LightbulbIcon } from "lucide-react"
 
-import { NOW } from "@/features/portfolio/data/now"
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/features/portfolio/components/panel"
+import {
+  Panel,
+  PanelContent,
+  PanelHeader,
+  PanelTitle,
+} from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
+import { NOW } from "@/features/portfolio/data/now"
 
 const ID = "now"
 
@@ -19,7 +24,11 @@ export function Now() {
       <PanelContent className="space-y-4">
         <NowGroup icon={<CodeIcon />} label="Building" items={NOW.building} />
         <NowGroup icon={<BookOpenIcon />} label="Reading" items={NOW.reading} />
-        <NowGroup icon={<LightbulbIcon />} label="Learning" items={NOW.learning} />
+        <NowGroup
+          icon={<LightbulbIcon />}
+          label="Learning"
+          items={NOW.learning}
+        />
       </PanelContent>
     </Panel>
   )
@@ -42,7 +51,10 @@ function NowGroup({
       </div>
       <ul className="space-y-1 pl-6">
         {items.map((item, index) => (
-          <li key={index} className="text-sm text-muted-foreground list-disc marker:text-muted-foreground/50">
+          <li
+            key={index}
+            className="list-disc text-sm text-muted-foreground marker:text-muted-foreground/50"
+          >
             {item}
           </li>
         ))}

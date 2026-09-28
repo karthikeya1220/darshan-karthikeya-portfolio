@@ -6,7 +6,8 @@ import { USER } from "@/features/portfolio/data/user"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://darshan-karthikeya.runs-on.dev",
+  url:
+    process.env.NEXT_PUBLIC_APP_URL || "https://darshan-karthikeya.runs-on.dev",
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -34,8 +35,10 @@ export const MOBILE_NAV: NavItem<Route>[] = [
 
 export const X_HANDLE = SOCIAL.github.handle
 export const GITHUB_USERNAME = SOCIAL.github.handle
-export const SOURCE_CODE_GITHUB_REPO = "karthikeya1220/darshan-karthikeya-portfolio"
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/karthikeya1220/darshan-karthikeya-portfolio"
+export const SOURCE_CODE_GITHUB_REPO =
+  "karthikeya1220/darshan-karthikeya-portfolio"
+export const SOURCE_CODE_GITHUB_URL =
+  "https://github.com/karthikeya1220/darshan-karthikeya-portfolio"
 
 export const SPONSORSHIP_URL = ""
 

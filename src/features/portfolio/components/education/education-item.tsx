@@ -1,9 +1,7 @@
 import { GraduationCapIcon, InfinityIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import {
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+import { CollapsibleTrigger } from "@/components/ui/collapsible"
 import { IconTile } from "@/components/ui/icon-tile"
 import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"

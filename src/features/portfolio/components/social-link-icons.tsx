@@ -1,7 +1,4 @@
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from "@/components/icons"
+import { GitHubIcon, LinkedInIcon } from "@/components/icons"
 import type { SocialName } from "@/features/portfolio/data/social-links"
 
 /**

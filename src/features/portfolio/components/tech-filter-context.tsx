@@ -14,7 +14,11 @@ export function useTechFilter() {
   return useContext(TechFilterContext)
 }
 
-export function TechFilterProvider({ children }: { children: React.ReactNode }) {
+export function TechFilterProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
 
   return (

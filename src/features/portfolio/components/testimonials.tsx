@@ -1,8 +1,14 @@
 import { QuoteIcon } from "lucide-react"
 
-import { TESTIMONIALS } from "@/features/portfolio/data/testimonials"
-import { Panel, PanelContent, PanelHeader, PanelTitle, PanelTitleSup } from "@/features/portfolio/components/panel"
+import {
+  Panel,
+  PanelContent,
+  PanelHeader,
+  PanelTitle,
+  PanelTitleSup,
+} from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
+import { TESTIMONIALS } from "@/features/portfolio/data/testimonials"
 
 const ID = "testimonials"
 
@@ -24,17 +30,24 @@ export function Testimonials() {
             className="screen-line-top space-y-2 py-4 first:border-none first:pt-0"
           >
             <div className="flex items-start gap-2">
-              <QuoteIcon className="size-4 shrink-0 text-muted-foreground/50 mt-0.5" aria-hidden />
-              <blockquote className="text-sm/relaxed text-muted-foreground">
+              <QuoteIcon
+                className="mt-0.5 size-4 shrink-0 text-muted-foreground/50"
+                aria-hidden
+              />
+              <blockquote className="font-serif text-[0.95rem]/relaxed text-muted-foreground italic">
                 {testimonial.content}
               </blockquote>
             </div>
             <figcaption className="pl-6 text-sm">
-              <span className="font-medium text-foreground">{testimonial.name}</span>
+              <span className="font-medium text-foreground">
+                {testimonial.name}
+              </span>
               <span className="text-muted-foreground"> / </span>
               <span className="text-muted-foreground">{testimonial.role}</span>
               <span className="text-muted-foreground"> at </span>
-              <span className="text-muted-foreground">{testimonial.company}</span>
+              <span className="text-muted-foreground">
+                {testimonial.company}
+              </span>
             </figcaption>
           </figure>
         ))}

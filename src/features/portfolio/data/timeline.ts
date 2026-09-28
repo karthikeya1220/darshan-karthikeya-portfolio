@@ -24,18 +24,22 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   { year: 2019 },
   { year: 2020 },
   { year: 2021 },
-  { year: 2022,
+  {
+    year: 2022,
     content: "Started B.Tech in Computer Science at IIITDM Kancheepuram.",
   },
-  { year: 2023,
+  {
+    year: 2023,
     content: `Joined IIITDM Web Team as Technical Lead.
 Became Head Core (Tech Affairs) at IIITDM.`,
   },
-  { year: 2024,
+  {
+    year: 2024,
     content: `Started SDE Intern at QuantaGlobal (Jan 2025 - Sep 2025).
 Built HireNexa AI recruitment platform.`,
   },
-  { year: 2025,
+  {
+    year: 2025,
     content: `Built UI Flow - AI wireframe-to-code platform.
 Won 1st place at BugByte '25 and RetroRevamp '25 hackathons.
 Top 5 out of 106 teams at VIT Hackathon.

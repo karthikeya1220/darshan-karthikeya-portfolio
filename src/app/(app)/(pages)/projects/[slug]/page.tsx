@@ -1,13 +1,18 @@
-import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeftIcon, ExternalLinkIcon } from "lucide-react"
+import { notFound } from "next/navigation"
 import { addQueryParams } from "@/utils/url"
+import { ArrowLeftIcon, ExternalLinkIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { Tag } from "@/components/ui/tag"
+import {
+  Panel,
+  PanelContent,
+  PanelHeader,
+  PanelTitle,
+} from "@/features/portfolio/components/panel"
 import { PROJECTS } from "@/features/portfolio/data/projects"
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/features/portfolio/components/panel"
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({ slug: project.id }))

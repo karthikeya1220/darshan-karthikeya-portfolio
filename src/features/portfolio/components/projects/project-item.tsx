@@ -1,6 +1,11 @@
 import Image from "next/image"
 import { addQueryParams } from "@/utils/url"
-import { BoxIcon, InfinityIcon, ExternalLinkIcon, ArrowRightIcon } from "lucide-react"
+import {
+  ArrowRightIcon,
+  BoxIcon,
+  ExternalLinkIcon,
+  InfinityIcon,
+} from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
 import {

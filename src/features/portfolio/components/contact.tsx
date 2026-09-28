@@ -1,9 +1,19 @@
-import { MailIcon, MapPinIcon, ClockIcon, ExternalLinkIcon } from "lucide-react"
+import { ClockIcon, ExternalLinkIcon, MailIcon, MapPinIcon } from "lucide-react"
 
-import { USER } from "@/features/portfolio/data/user"
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/features/portfolio/components/panel"
+import {
+  IntroItem,
+  IntroItemContent,
+  IntroItemIcon,
+  IntroItemLink,
+} from "@/features/portfolio/components/overview/intro-item"
+import {
+  Panel,
+  PanelContent,
+  PanelHeader,
+  PanelTitle,
+} from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
-import { IntroItem, IntroItemContent, IntroItemIcon, IntroItemLink } from "@/features/portfolio/components/overview/intro-item"
+import { USER } from "@/features/portfolio/data/user"
 
 const ID = "contact"
 

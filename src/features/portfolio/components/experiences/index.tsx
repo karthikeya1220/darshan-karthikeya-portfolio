@@ -12,7 +12,10 @@ import {
   PanelTitle,
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
-import { PROFESSIONAL_EXPERIENCES, COLLEGE_EXPERIENCES } from "@/features/portfolio/data/experiences"
+import {
+  COLLEGE_EXPERIENCES,
+  PROFESSIONAL_EXPERIENCES,
+} from "@/features/portfolio/data/experiences"
 import type { Experience } from "@/features/portfolio/types/experiences"
 
 import { ExperienceItem } from "./experience-item"

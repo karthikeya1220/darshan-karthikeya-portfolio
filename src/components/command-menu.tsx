@@ -115,11 +115,7 @@ function CommandMenuItem({
   ...props
 }: CommandMenuItemProps) {
   return (
-    <CommandItem
-      onFocus={onHighlight}
-      onMouseEnter={onHighlight}
-      {...props}
-    >
+    <CommandItem onFocus={onHighlight} onMouseEnter={onHighlight} {...props}>
       {children}
     </CommandItem>
   )
@@ -186,20 +182,17 @@ export function CommandMenu({
     [router]
   )
 
-  const handleCopyText = useCallback(
-    (text: string, message: string) => {
-      setOpen(false)
-      copyToClipboardWithEvent(text, {
-        name: "command_menu_action",
-        properties: {
-          action: "copy",
-          text: text,
-        },
-      })
-      toast.add({ type: "success", title: message })
-    },
-    []
-  )
+  const handleCopyText = useCallback((text: string, message: string) => {
+    setOpen(false)
+    copyToClipboardWithEvent(text, {
+      name: "command_menu_action",
+      properties: {
+        action: "copy",
+        text: text,
+      },
+    })
+    toast.add({ type: "success", title: message })
+  }, [])
 
   const createThemeHandler = useCallback(
     (theme: "light" | "dark" | "system") => () => {
@@ -337,9 +330,7 @@ export function CommandMenu({
 
         <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl px-4 text-xs font-medium">
           <div className="flex items-center gap-2 max-sm:hidden">
-            <span>
-              {selectedCommandKind === "link" ? "Open" : "Navigate"}
-            </span>
+            <span>{selectedCommandKind === "link" ? "Open" : "Navigate"}</span>
             <Kbd>
               <CornerDownLeftIcon className="size-3" />
             </Kbd>

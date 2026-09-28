@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { useInView, motion, type Variants } from "motion/react"
+import { motion, useInView, type Variants } from "motion/react"
 
 const variants: Variants = {
   hidden: { opacity: 0, y: 12 },

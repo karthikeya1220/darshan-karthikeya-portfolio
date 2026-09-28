@@ -103,13 +103,7 @@ export const PROJECTS: Project[] = [
       start: "04.2025",
     },
     link: "https://github.com/karthikeya1220/Churn-Prediction-with-SHAP",
-    skills: [
-      "Data Science",
-      "Python",
-      "XGBoost",
-      "SHAP",
-      "Explainable ML",
-    ],
+    skills: ["Data Science", "Python", "XGBoost", "SHAP", "Explainable ML"],
     description: `Explainable ML pipeline for customer churn prediction using XGBoost and SHAP analysis.
 - Built interpretable machine learning pipeline
 - Implemented SHAP for model explainability`,

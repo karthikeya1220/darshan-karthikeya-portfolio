@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { Magnet } from "@/components/react-bits/magnet"
 import {
   HandwrittenArrow,
   HandwrittenNote,
@@ -17,38 +18,40 @@ import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 export function SocialLinks() {
   return (
-    <Panel>
+    <Panel id="socials">
       <h2 className="sr-only">Social links</h2>
 
       <PanelContent>
         <ul className="flex flex-wrap gap-2">
           {SOCIAL_LINKS.map((item) => (
             <li key={item.name}>
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <Button
-                      className="text-foreground/80 shadow-none [&_svg:not([class*='size-'])]:size-4.5"
-                      variant="outline"
-                      size="icon-sm"
-                      nativeButton={false}
-                      render={
-                        <a
-                          href={addQueryParams(item.href, UTM_PARAMS)}
-                          target="_blank"
-                          rel="noopener"
-                        >
-                          {SOCIAL_ICONS[item.name]}
-                          <span className="sr-only">{item.title}</span>
-                        </a>
-                      }
-                    />
-                  }
-                />
-                <TooltipContent>
-                  {item.title} ({item.handle})
-                </TooltipContent>
-              </Tooltip>
+              <Magnet padding={40} magnetStrength={3}>
+                <Tooltip>
+                  <TooltipTrigger
+                    render={
+                      <Button
+                        className="text-foreground/80 shadow-none [&_svg:not([class*='size-'])]:size-4.5"
+                        variant="outline"
+                        size="icon-sm"
+                        nativeButton={false}
+                        render={
+                          <a
+                            href={addQueryParams(item.href, UTM_PARAMS)}
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            {SOCIAL_ICONS[item.name]}
+                            <span className="sr-only">{item.title}</span>
+                          </a>
+                        }
+                      />
+                    }
+                  />
+                  <TooltipContent>
+                    {item.title} ({item.handle})
+                  </TooltipContent>
+                </Tooltip>
+              </Magnet>
             </li>
           ))}
         </ul>

@@ -1,9 +1,7 @@
 import { format } from "date-fns"
 import { Crown, Paperclip } from "lucide-react"
 
-import {
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+import { CollapsibleTrigger } from "@/components/ui/collapsible"
 import { IconTile } from "@/components/ui/icon-tile"
 import { Separator } from "@/components/ui/separator"
 import {

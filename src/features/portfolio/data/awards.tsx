@@ -7,7 +7,8 @@ export const AWARDS: Award[] = [
     title: "BugByte '25 Hackathon",
     date: "2025-03",
     grade: "University",
-    description: "Won 1st place at BugByte '25 hackathon for building an innovative solution.",
+    description:
+      "Won 1st place at BugByte '25 hackathon for building an innovative solution.",
   },
   {
     id: "hackathon-retrorevamp-25",

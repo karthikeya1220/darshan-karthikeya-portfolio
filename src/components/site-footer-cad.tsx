@@ -184,26 +184,11 @@ export function SiteFooterCad() {
         <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
           <Link
             href="/"
-            className="mr-auto font-medium text-sm text-muted-foreground transition-[color] hover:text-foreground"
+            className="mr-auto text-sm font-medium text-muted-foreground transition-[color] hover:text-foreground"
             aria-label="Home"
           >
             DK
           </Link>
-
-          <a
-            className="flex items-center transition-[color] hover:text-foreground"
-            href={githubLink.href}
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub Profile"
-          >
-            <GitHubIcon className="size-4" />
-          </a>
-
-          <Separator
-            orientation="vertical"
-            className="data-vertical:h-4 data-vertical:self-center"
-          />
 
           <a
             className="flex items-center transition-[color] hover:text-foreground"

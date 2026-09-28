@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["darshan-karthikeya.localhost", "darshan-karthikeya.local"],
+  allowedDevOrigins: [
+    "darshan-karthikeya.localhost",
+    "darshan-karthikeya.local",
+  ],
   devIndicators: false,
   experimental: {
     optimizePackageImports: [

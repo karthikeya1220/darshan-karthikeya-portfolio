@@ -1,8 +1,4 @@
-import {
-  CodeXmlIcon,
-  LightbulbIcon,
-  BrainCircuitIcon,
-} from "lucide-react"
+import { BrainCircuitIcon, CodeXmlIcon, LightbulbIcon } from "lucide-react"
 
 import type { Experience } from "@/features/portfolio/types/experiences"
 
@@ -28,9 +24,7 @@ export const PROFESSIONAL_EXPERIENCES: Experience[] = [
 - Took features from concept through testing, deployment, and production support; maintained and improved products following launch; demonstrated strong ownership and adaptability.
 - Used AI-assisted development workflows to improve productivity; experimented with AI evaluation and observability for debugging and tracing.`,
         skills: ["React", "Node.js", "MongoDB", "Express.js", "REST APIs"],
-        metrics: [
-          { label: "Active users", value: "70+" },
-        ],
+        metrics: [{ label: "Active users", value: "70+" }],
       },
     ],
   },
