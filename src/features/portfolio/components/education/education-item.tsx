@@ -1,11 +1,19 @@
 import { GraduationCapIcon, InfinityIcon } from "lucide-react"
+import ReactMarkdown from "react-markdown"
 
 import { cn } from "@/lib/utils"
-import { CollapsibleTrigger } from "@/components/ui/collapsible"
+import {
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import { IconTile } from "@/components/ui/icon-tile"
 import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"
 import { Collapsible } from "@/components/collapsible-animated"
+import {
+  HandwrittenArrow,
+  HandwrittenNote,
+} from "@/features/portfolio/components/handwritten-note"
 import type { Education } from "@/features/portfolio/types/education"
 
 export function EducationItem({ item }: { item: Education }) {
@@ -22,6 +30,13 @@ export function EducationItem({ item }: { item: Education }) {
       </div>
 
       <Collapsible defaultOpen={item.isExpanded} disabled={!item.description}>
+        {item.annotation && (
+          <HandwrittenNote className="top-1 left-full ml-4 hidden w-24 flex-col items-start lg:flex">
+            <span className="-rotate-3">{item.annotation}</span>
+            <HandwrittenArrow className="-mt-0.5 -ml-1 size-6" />
+          </HandwrittenNote>
+        )}
+
         <CollapsibleTrigger
           className={cn(
             "group block w-full text-left",
@@ -87,6 +102,16 @@ export function EducationItem({ item }: { item: Education }) {
             )}
           </dl>
         </CollapsibleTrigger>
+
+        {item.description && (
+          <CollapsibleContent className="overflow-hidden">
+            <div className="pt-3 pl-9">
+              <div className="typeset typeset-description [&_li]:ps-0.5 [&_ul]:ps-3.5">
+                <ReactMarkdown>{item.description}</ReactMarkdown>
+              </div>
+            </div>
+          </CollapsibleContent>
+        )}
 
         {Array.isArray(item.skills) && item.skills.length > 0 && (
           <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">

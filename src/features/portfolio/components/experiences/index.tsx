@@ -18,7 +18,11 @@ import {
 } from "@/features/portfolio/data/experiences"
 import type { Experience } from "@/features/portfolio/types/experiences"
 
+import { CollegeLedger } from "./college-ledger"
 import { ExperienceItem } from "./experience-item"
+import { LeadershipLoadChart } from "./leadership-load-chart"
+import { ScopeDiagram } from "./scope-diagram"
+import { TenureChart } from "./tenure-chart"
 
 const MAX = 3
 
@@ -28,6 +32,7 @@ export function ProfessionalExperiences() {
       id="professional-experience"
       title="Professional Experience"
       experiences={PROFESSIONAL_EXPERIENCES}
+      intro={<TenureChart experiences={PROFESSIONAL_EXPERIENCES} />}
     />
   )
 }
@@ -38,6 +43,13 @@ export function CollegeExperiences() {
       id="college-experience"
       title="College Club Experience"
       experiences={COLLEGE_EXPERIENCES}
+      intro={
+        <>
+          <CollegeLedger experiences={COLLEGE_EXPERIENCES} />
+          <ScopeDiagram experiences={COLLEGE_EXPERIENCES} />
+        </>
+      }
+      outro={<LeadershipLoadChart experiences={COLLEGE_EXPERIENCES} />}
     />
   )
 }
@@ -46,10 +58,14 @@ function ExperienceSection({
   id,
   title,
   experiences,
+  intro,
+  outro,
 }: {
   id: string
   title: string
   experiences: Experience[]
+  intro?: React.ReactNode
+  outro?: React.ReactNode
 }) {
   return (
     <Panel id={id}>
@@ -59,6 +75,8 @@ function ExperienceSection({
           <PanelTitleCopy id={id} />
         </PanelTitle>
       </PanelHeader>
+
+      {intro}
 
       <div className="pr-2 pl-4">
         <ExperienceList experiences={experiences.slice(0, MAX)} />
@@ -93,6 +111,8 @@ function ExperienceSection({
           </div>
         </Collapsible>
       )}
+
+      {outro}
     </Panel>
   )
 }

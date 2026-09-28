@@ -21,6 +21,8 @@ export type ExperiencePosition = {
   isExpanded?: boolean
   /** Key impact metrics for this position. */
   metrics?: { label: string; value: string }[]
+  /** Handwritten margin note rendered beside the role (visible on large screens). */
+  annotation?: string
 }
 
 export type Experience = {

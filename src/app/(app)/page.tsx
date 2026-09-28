@@ -51,60 +51,60 @@ export default function HomePage() {
       <CrosshairOverlay />
 
       <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
-        <div className="mx-auto md:max-w-3xl">
-          <ProfileHeader />
-          <Separator />
+        <TechFilterProvider>
+          <div className="mx-auto md:max-w-3xl">
+            <ProfileHeader />
+            <Separator />
 
-          <Overview />
-          <SocialLinks />
-          <GitHubContributions />
-          <Separator />
+            <Overview />
+            <SocialLinks />
+            <GitHubContributions />
+            <Separator />
 
-          <Hello />
-          <Separator />
+            <Hello />
+            <Separator />
 
-          <TechFilterProvider>
             <TechStack />
-          </TechFilterProvider>
-          <Separator />
+            <Separator />
 
-          <ProfessionalExperiences />
-          <Separator />
+            <ProfessionalExperiences />
+            <Separator />
 
-          <CollegeExperiences />
-          <Separator />
+            <CollegeExperiences />
+            <Separator />
 
-          <Education />
-          <Separator />
+            <Education />
+            <Separator />
 
-          <Projects />
-          <Separator />
+            <Projects />
+            <Separator />
 
-          <Awards />
-          <Separator />
+            <Awards />
+            <Separator />
 
-          <Certifications />
-          <Separator />
+            <Certifications />
+            <Separator />
 
-          <SectionReveal>
-            <Testimonials />
-          </SectionReveal>
-          <Separator />
+            <SectionReveal>
+              <Testimonials />
+            </SectionReveal>
+            <Separator />
 
-          <SectionReveal>
-            <Contact />
-          </SectionReveal>
-          <Separator />
+            <SectionReveal>
+              <Contact />
+            </SectionReveal>
+            <Separator />
 
-          <SectionReveal>
-            <Now />
-          </SectionReveal>
-          <Separator />
+            <SectionReveal>
+              <Now />
+            </SectionReveal>
+            <Separator />
 
-          <Suspense fallback={<InsightsSkeleton />}>
-            <Insights />
-          </Suspense>
-        </div>
+            <Suspense fallback={<InsightsSkeleton />}>
+              <Insights />
+            </Suspense>
+          </div>
+        </TechFilterProvider>
       </div>
     </>
   )

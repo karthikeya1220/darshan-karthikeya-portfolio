@@ -25,6 +25,7 @@ export const PROFESSIONAL_EXPERIENCES: Experience[] = [
 - Used AI-assisted development workflows to improve productivity; experimented with AI evaluation and observability for debugging and tracing.`,
         skills: ["React", "Node.js", "MongoDB", "Express.js", "REST APIs"],
         metrics: [{ label: "Active users", value: "70+" }],
+        annotation: "first app I shipped to the stores",
       },
     ],
   },
@@ -61,6 +62,7 @@ export const PROFESSIONAL_EXPERIENCES: Experience[] = [
           { label: "Daily API requests", value: "500+" },
           { label: "Latency improvement", value: "35%" },
         ],
+        annotation: "learned to ship without specs",
       },
     ],
     isCurrentEmployer: false,
@@ -83,6 +85,7 @@ export const PROFESSIONAL_EXPERIENCES: Experience[] = [
         icon: <BrainCircuitIcon />,
         description: `- Built data processing pipelines using Python; supported backend services and integrations for LLM-powered product capabilities.`,
         skills: ["Python", "NLP", "LLM", "GenAI", "Data Processing"],
+        annotation: "2 months deep in LLM pipelines",
       },
     ],
   },
@@ -111,6 +114,7 @@ export const COLLEGE_EXPERIENCES: Experience[] = [
           { label: "Students served", value: "500+" },
           { label: "Recruiters onboarded", value: "30+" },
         ],
+        annotation: "the portal 500+ students used",
       },
     ],
   },
@@ -132,6 +136,7 @@ export const COLLEGE_EXPERIENCES: Experience[] = [
         description: `- Led development initiatives for the CSE Department website and Developers Club platform
 - Improved platform usability, maintainability, and backend performance`,
         skills: ["Web Development", "Leadership", "Team Management"],
+        annotation: "first dev team I ever led",
       },
     ],
   },
@@ -143,7 +148,7 @@ export const COLLEGE_EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "1",
-        title: "Head Core (Tech Affairs)",
+        title: "Head Core (Tech Development Team)",
         employmentPeriod: {
           start: "2023",
           end: "2025",
@@ -154,6 +159,7 @@ export const COLLEGE_EXPERIENCES: Experience[] = [
 - Oversaw campus-wide digital infrastructure and orchestrated technical events
 - Coordinated technical planning, code reviews, and mentored developers across institute platforms`,
         skills: ["Technical Leadership", "Mentoring", "Project Management"],
+        annotation: "led tech affairs across campus",
       },
     ],
   },

@@ -14,7 +14,7 @@ export const EDUCATION: Education[] = [
 - Focus areas: Full Stack Development, Applied AI, System Architecture.
 - Lead Software Developer for official IIITDM Placement Portal.
 - Technical Lead for IIITDM Web Team and Developers Club.
-- Head Core (Tech Affairs) coordinating technical planning and mentoring developers.`,
+- Head Core (Tech Development Team) coordinating technical planning and mentoring developers.`,
     skills: [
       "TypeScript",
       "JavaScript",
@@ -27,5 +27,28 @@ export const EDUCATION: Education[] = [
       "System Design",
       "AI/ML",
     ],
+    coursework: [
+      {
+        label: "Full Stack",
+        skills: [
+          "TypeScript",
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Node.js",
+          "MongoDB",
+          "PostgreSQL",
+        ],
+      },
+      {
+        label: "Applied AI",
+        skills: ["Python", "AI/ML"],
+      },
+      {
+        label: "System Architecture",
+        skills: ["System Design"],
+      },
+    ],
+    annotation: "4 years, 3 tech orgs, 1 placement portal",
   },
 ]

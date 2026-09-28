@@ -31,7 +31,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   {
     year: 2023,
     content: `Joined IIITDM Web Team as Technical Lead.
-Became Head Core (Tech Affairs) at IIITDM.`,
+Became Head Core (Tech Development Team) at IIITDM.`,
   },
   {
     year: 2024,

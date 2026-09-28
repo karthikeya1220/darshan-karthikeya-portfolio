@@ -7,7 +7,9 @@ import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy
 import { EDUCATION } from "@/features/portfolio/data/education"
 import type { Education } from "@/features/portfolio/types/education"
 
+import { CurriculumMap } from "./curriculum-map"
 import { EducationItem } from "./education-item"
+import { EducationLedger } from "./education-ledger"
 
 const ID = "education"
 
@@ -21,6 +23,8 @@ export function Education() {
         </PanelTitle>
       </PanelHeader>
 
+      <EducationLedger education={EDUCATION} />
+
       {EDUCATION.map((item) => (
         <div
           key={item.id}
@@ -30,6 +34,10 @@ export function Education() {
           <EducationItem key={item.id} item={item} />
         </div>
       ))}
+
+      <CurriculumMap
+        coursework={EDUCATION.flatMap((item) => item.coursework ?? [])}
+      />
     </Panel>
   )
 }

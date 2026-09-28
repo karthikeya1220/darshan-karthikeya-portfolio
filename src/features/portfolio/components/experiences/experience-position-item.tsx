@@ -1,4 +1,5 @@
-import { differenceInMonths, parse } from "date-fns"
+import { parsePeriodDate } from "@/utils/date"
+import { differenceInMonths } from "date-fns"
 import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 
@@ -11,6 +12,10 @@ import { IconTile } from "@/components/ui/icon-tile"
 import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"
 import { Collapsible } from "@/components/collapsible-animated"
+import {
+  HandwrittenArrow,
+  HandwrittenNote,
+} from "@/features/portfolio/components/handwritten-note"
 import type { ExperiencePosition } from "@/features/portfolio/types/experiences"
 
 export function ExperiencePositionItem({
@@ -31,6 +36,13 @@ export function ExperiencePositionItem({
       <div className="pointer-events-none absolute bottom-0 left-3 hidden size-4 bg-background group-last/experience-position:flex">
         <span className="size-full -translate-y-2.25 rounded-bl-sm border-b border-l" />
       </div>
+
+      {position.annotation && (
+        <HandwrittenNote className="top-1 left-full ml-4 hidden w-24 flex-col items-start lg:flex">
+          <span className="-rotate-3">{position.annotation}</span>
+          <HandwrittenArrow className="-mt-0.5 -ml-1 size-6" />
+        </HandwrittenNote>
+      )}
 
       <CollapsibleTrigger
         className={cn(
@@ -92,6 +104,34 @@ export function ExperiencePositionItem({
             </>
           )}
         </dl>
+
+        {Array.isArray(position.metrics) && position.metrics.length > 0 && (
+          <dl className="mt-2 grid grid-cols-2 gap-y-1 pl-9 sm:grid-cols-3">
+            {position.metrics.map((metric, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "flex items-baseline gap-1.5 pr-4",
+                  index === 0
+                    ? ""
+                    : index % 2 === 0
+                      ? "sm:border-l sm:border-dashed sm:border-line sm:pl-4"
+                      : "border-l border-dashed border-line pl-4"
+                )}
+              >
+                <dt className="sr-only">{metric.label}</dt>
+                <dd className="flex items-baseline gap-1.5">
+                  <span className="font-mono font-semibold whitespace-nowrap tabular-nums">
+                    {metric.value}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    {metric.label}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </CollapsibleTrigger>
 
       <CollapsibleContent className="overflow-hidden">
@@ -110,22 +150,6 @@ export function ExperiencePositionItem({
                 </li>
               ))}
             </ul>
-          )}
-
-          {Array.isArray(position.metrics) && position.metrics.length > 0 && (
-            <div className="flex flex-wrap gap-3">
-              {position.metrics.map((metric, index) => (
-                <div
-                  key={index}
-                  className="flex items-baseline gap-1.5 text-sm"
-                >
-                  <span className="font-mono font-semibold text-foreground tabular-nums">
-                    {metric.value}
-                  </span>
-                  <span className="text-muted-foreground">{metric.label}</span>
-                </div>
-              ))}
-            </div>
           )}
         </div>
       </CollapsibleContent>
@@ -163,15 +187,4 @@ function formatDuration(start: string, end?: string): string {
     return `${years}y`
   }
   return `${years}y ${months}m`
-}
-
-function parsePeriodDate(str: string, fallbackMonth: "first" | "last"): Date {
-  if (str.includes(".")) {
-    return parse(str, "MM.yyyy", new Date())
-  }
-  return parse(
-    `${fallbackMonth === "last" ? "12" : "01"}.${str}`,
-    "MM.yyyy",
-    new Date()
-  )
 }

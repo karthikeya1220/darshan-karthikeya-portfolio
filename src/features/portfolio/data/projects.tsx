@@ -21,6 +21,7 @@ export const PROJECTS: Project[] = [
 - Built AI resume screening system using Gemini AI
 - Automated candidate matching and ranking
 - Integrated with existing recruitment workflows`,
+    metrics: [{ value: "65%", label: "less manual screening" }],
     isExpanded: true,
   },
   {
@@ -40,6 +41,7 @@ export const PROJECTS: Project[] = [
     description: `AI platform converting wireframes into production-ready React + Tailwind code. 70% faster UI dev.
 - Automated wireframe-to-code conversion
 - Generated production-ready React components`,
+    metrics: [{ value: "70%", label: "faster UI dev" }],
   },
   {
     id: "marketglimpse",
@@ -78,34 +80,39 @@ export const PROJECTS: Project[] = [
 - Integrated Razorpay payment gateway`,
   },
   {
-    id: "iuwo-segmentation",
-    title: "IUWO-segmentation",
+    id: "healyou",
+    title: "HealYou",
     period: {
       start: "06.2025",
-      end: "07.2025",
     },
-    link: "https://github.com/karthikeya1220/iuwo-segmentation",
+    link: "https://github.com/karthikeya1220/HealYou",
     skills: [
-      "Research",
-      "Applied AI",
-      "Python",
-      "Medical Imaging",
-      "Brain Tumor Segmentation",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "Cross-platform",
     ],
-    description: `Impact-Weighted Uncertainty Optimization (IWUO) for expert-in-the-loop brain tumor segmentation. Selects axial slices that maximize impact of limited expert corrections.
-- IEEE Publication at TENCON 2026
-- Novel approach to medical image segmentation`,
+    description: `Social fitness and wellness app combining community features with personal health tracking, shipped to iOS, Android, and web from a single Expo codebase.
+- Built activity, workout, and progress dashboards with interactive charts
+- Added community groups, real-time messaging, and smart notification preferences`,
+    metrics: [{ value: "3", label: "platforms shipped" }],
   },
   {
-    id: "churn-prediction",
-    title: "Churn Prediction with SHAP",
+    id: "next-role",
+    title: "NextRole",
     period: {
-      start: "04.2025",
+      start: "08.2026",
     },
-    link: "https://github.com/karthikeya1220/Churn-Prediction-with-SHAP",
-    skills: ["Data Science", "Python", "XGBoost", "SHAP", "Explainable ML"],
-    description: `Explainable ML pipeline for customer churn prediction using XGBoost and SHAP analysis.
-- Built interpretable machine learning pipeline
-- Implemented SHAP for model explainability`,
+    link: "https://github.com/karthikeya1220/next-role",
+    skills: ["Python", "FastAPI", "Next.js", "Semantic Search", "Ollama"],
+    description: `Local-first AI career assistant that finds jobs across 90+ company boards, scores them with an explainable formula, and writes resumes grounded strictly in your own experience — no API keys, no data leaving your machine.
+- Reads Greenhouse, Lever, Ashby, and SmartRecruiters boards with region and seniority filters that explain every exclusion
+- RAG resume generation rejects any bullet or metric it cannot trace back to your knowledge base`,
+    metrics: [
+      { value: "90+", label: "job boards" },
+      { value: "5", label: "scoring features" },
+      { value: "0", label: "API keys" },
+    ],
   },
 ]
