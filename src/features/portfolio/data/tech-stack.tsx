@@ -1,9 +1,38 @@
 import {
+  ActivityIcon,
+  BotIcon,
+  BracesIcon,
+  DatabaseIcon,
+  FileSearchIcon,
+  FileTextIcon,
+  FingerprintIcon,
+  FlaskConicalIcon,
+  GaugeIcon,
+  GitPullRequestIcon,
+  LifeBuoyIcon,
+  ListChecksIcon,
+  MessageSquareCodeIcon,
+  MonitorSmartphoneIcon,
+  NetworkIcon,
+  RefreshCwIcon,
+  RepeatIcon,
+  RouteIcon,
+  ShieldCheckIcon,
+  SquareTerminalIcon,
+  TablePropertiesIcon,
+  WebhookIcon,
+  WorkflowIcon,
+  ZapIcon,
+} from "lucide-react"
+
+import {
   BunIcon,
+  CssIcon,
   GitHubIcon,
   JsIcon,
   OpenAIIcon,
   ShadcnIcon,
+  TerminalIcon,
   TsIcon,
   VercelIcon,
 } from "@/components/icons"
@@ -37,6 +66,27 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
+    categories: ["Languages & Core"],
+  },
+  {
+    key: "sql",
+    title: "SQL",
+    href: "https://en.wikipedia.org/wiki/SQL",
+    icon: <DatabaseIcon aria-hidden />,
+    categories: ["Languages & Core"],
+  },
+  {
+    key: "bash",
+    title: "Bash",
+    href: "https://www.gnu.org/software/bash/",
+    icon: <TerminalIcon />,
+    categories: ["Languages & Core"],
+  },
+  {
+    key: "html-css",
+    title: "HTML / CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web",
+    icon: <CssIcon />,
     categories: ["Languages & Core"],
   },
   {
@@ -159,6 +209,27 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Frontend"],
   },
   {
+    key: "vite",
+    title: "Vite",
+    href: "https://vite.dev",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="m8.286 10.578.512-8.657a.306.306 0 0 1 .247-.282L17.377.006a.306.306 0 0 1 .353.385l-1.558 5.403a.306.306 0 0 0 .352.385l2.388-.46a.306.306 0 0 1 .332.438l-6.79 13.55-.123.19a.294.294 0 0 1-.252.14c-.177 0-.35-.152-.305-.369l1.095-5.301a.306.306 0 0 0-.388-.355l-1.433.435a.306.306 0 0 1-.389-.354l.69-3.375a.306.306 0 0 0-.37-.36l-2.32.536a.306.306 0 0 1-.374-.316zm14.976-7.926L17.284 3.74l-.544 1.887 2.077-.4a.8.8 0 0 1 .84.369.8.8 0 0 1 .034.783L12.9 19.93l-.013.025-.015.023-.122.19a.801.801 0 0 1-.672.37.826.826 0 0 1-.634-.302.8.8 0 0 1-.16-.67l1.029-4.981-1.12.34a.81.81 0 0 1-.86-.262.802.802 0 0 1-.165-.67l.63-3.08-2.027.468a.808.808 0 0 1-.768-.233.81.81 0 0 1-.217-.6l.389-6.57-7.44-1.33a.612.612 0 0 0-.64.906L11.58 23.691a.612.612 0 0 0 1.066-.004l11.26-20.135a.612.612 0 0 0-.644-.9z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Frontend"],
+  },
+  {
+    key: "responsive-ui",
+    title: "Responsive UI",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries",
+    icon: <MonitorSmartphoneIcon aria-hidden />,
+    categories: ["Frontend"],
+  },
+  {
     key: "mobx-state-tree",
     title: "MobX-State-Tree",
     href: "https://mobx-state-tree.js.org",
@@ -184,14 +255,56 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Backend & Database"],
+    categories: ["Backend"],
   },
   {
     key: "bun",
     title: "Bun",
     href: "https://bun.sh",
     icon: <BunIcon />,
-    categories: ["Backend & Database"],
+    categories: ["Backend"],
+  },
+  {
+    key: "express",
+    title: "Express.js",
+    href: "https://expressjs.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c0-.235-.08-.455-.134-.666A88.33 88.33 0 010 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278-2.882-.04-4.944 2.094-5.071 5.264z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Backend"],
+  },
+  {
+    key: "rest-apis",
+    title: "REST APIs",
+    href: "https://restfulapi.net/",
+    icon: <NetworkIcon aria-hidden />,
+    categories: ["Backend"],
+  },
+  {
+    key: "webhooks",
+    title: "Webhooks",
+    href: "https://docs.github.com/en/webhooks/using-webhooks/overview",
+    icon: <WebhookIcon aria-hidden />,
+    categories: ["Backend"],
+  },
+  {
+    key: "better-auth",
+    title: "Better Auth",
+    href: "https://www.better-auth.com",
+    icon: <ShieldCheckIcon aria-hidden />,
+    categories: ["Backend"],
+  },
+  {
+    key: "firebase-auth",
+    title: "Firebase Auth",
+    href: "https://firebase.google.com/docs/auth",
+    icon: <FingerprintIcon aria-hidden />,
+    categories: ["Backend"],
   },
   {
     key: "postgresql",
@@ -205,7 +318,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Backend & Database"],
+    categories: ["Databases"],
   },
   {
     key: "mongodb",
@@ -219,7 +332,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Backend & Database"],
+    categories: ["Databases"],
   },
   {
     key: "redis",
@@ -233,7 +346,77 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Backend & Database"],
+    categories: ["Databases"],
+  },
+  {
+    key: "neon",
+    title: "Neon",
+    href: "https://neon.tech",
+    icon: <ZapIcon aria-hidden />,
+    categories: ["Databases"],
+  },
+  {
+    key: "supabase",
+    title: "Supabase",
+    href: "https://supabase.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Databases"],
+  },
+  {
+    key: "mysql",
+    title: "MySQL",
+    href: "https://www.mysql.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Databases"],
+  },
+  {
+    key: "firebase",
+    title: "Firebase",
+    href: "https://firebase.google.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M19.455 8.369c-.538-.748-1.778-2.285-3.681-4.569-.826-.991-1.535-1.832-1.884-2.245a146 146 0 0 0-.488-.576l-.207-.245-.113-.133-.022-.032-.01-.005L12.57 0l-.609.488c-1.555 1.246-2.828 2.851-3.681 4.64-.523 1.064-.864 2.105-1.043 3.176-.047.241-.088.489-.121.738-.209-.017-.421-.028-.632-.033-.018-.001-.035-.002-.059-.003a7.46 7.46 0 0 0-2.28.274l-.317.089-.163.286c-.765 1.342-1.198 2.869-1.252 4.416-.07 2.01.477 3.954 1.583 5.625 1.082 1.633 2.61 2.882 4.42 3.611l.236.095.071.025.003-.001a9.59 9.59 0 0 0 2.941.568q.171.006.342.006c1.273 0 2.513-.249 3.69-.742l.008.004.313-.145a9.63 9.63 0 0 0 3.927-3.335c1.01-1.49 1.577-3.234 1.641-5.042.075-2.161-.643-4.304-2.133-6.371m-7.083 6.695c.328 1.244.264 2.44-.191 3.558-1.135-1.12-1.967-2.352-2.475-3.665-.543-1.404-.87-2.74-.974-3.975.48.157.922.366 1.315.622 1.132.737 1.914 1.902 2.325 3.461zm.207 6.022c.482.368.99.712 1.513 1.028-.771.21-1.565.302-2.369.273a8 8 0 0 1-.373-.022c.458-.394.869-.823 1.228-1.279zm1.347-6.431c-.516-1.957-1.527-3.437-3.002-4.398-.647-.421-1.385-.741-2.194-.95.011-.134.026-.268.043-.4.014-.113.03-.216.046-.313.133-.689.332-1.37.589-2.025.099-.25.206-.499.321-.74l.004-.008c.177-.358.376-.719.61-1.105l.092-.152-.003-.001c.544-.851 1.197-1.627 1.942-2.311l.288.341c.672.796 1.304 1.548 1.878 2.237 1.291 1.549 2.966 3.583 3.612 4.48 1.277 1.771 1.893 3.579 1.83 5.375-.049 1.395-.461 2.755-1.195 3.933-.694 1.116-1.661 2.05-2.8 2.708-.636-.318-1.559-.839-2.539-1.599.79-1.575.952-3.28.479-5.072zm-2.575 5.397c-.725.939-1.587 1.55-2.09 1.856-.081-.029-.163-.06-.243-.093l-.065-.026c-1.49-.616-2.747-1.656-3.635-3.01-.907-1.384-1.356-2.993-1.298-4.653.041-1.19.338-2.327.882-3.379.316-.07.638-.114.96-.131l.084-.002c.162-.003.324-.003.478 0 .227.011.454.035.677.07.073 1.513.445 3.145 1.105 4.852.637 1.644 1.694 3.162 3.144 4.515z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Databases"],
+  },
+  {
+    key: "prisma",
+    title: "Prisma",
+    href: "https://www.prisma.io",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M21.8068 18.2848L13.5528.7565c-.207-.4382-.639-.7273-1.1286-.7541-.5023-.0293-.9523.213-1.2062.6253L2.266 15.1271c-.2773.4518-.2718 1.0091.0158 1.4555l4.3759 6.7786c.2608.4046.7127.6388 1.1823.6388.1332 0 .267-.0188.3987-.0577l12.7019-3.7568c.3891-.1151.7072-.3904.8737-.7553s.1633-.7828-.0075-1.1454zm-1.8481.7519L9.1814 22.2242c-.3292.0975-.6448-.1873-.5756-.5194l3.8501-18.4386c.072-.3448.5486-.3996.699-.0803l7.1288 15.138c.1344.2856-.019.6224-.325.7128z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["Databases"],
+  },
+  {
+    key: "indexing-data-access",
+    title: "Indexing & data access",
+    href: "https://use-the-index-luke.com/",
+    icon: <TablePropertiesIcon aria-hidden />,
+    categories: ["Databases"],
   },
   {
     key: "nginx",
@@ -247,7 +430,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Backend & Database"],
+    categories: ["Backend"],
   },
   {
     key: "claude",
@@ -261,7 +444,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML / Agents"],
   },
   {
     key: "cursor",
@@ -275,7 +458,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML / Agents"],
   },
   {
     key: "gemini",
@@ -289,14 +472,70 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML / Agents"],
   },
   {
     key: "chatgpt",
     title: "ChatGPT",
     href: "https://chatgpt.com",
     icon: <OpenAIIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "openrouter",
+    title: "OpenRouter",
+    href: "https://openrouter.ai",
+    icon: <RouteIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "agent-systems",
+    title: "Agent-based systems",
+    href: "https://www.anthropic.com/engineering/building-effective-agents",
+    icon: <BotIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "rag-pipelines",
+    title: "RAG pipelines",
+    href: "https://www.pinecone.io/learn/retrieval-augmented-generation/",
+    icon: <FileSearchIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "prompt-iteration",
+    title: "Prompt iteration",
+    href: "https://www.promptingguide.ai/",
+    icon: <MessageSquareCodeIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "evals-metrics",
+    title: "Evals & metrics",
+    href: "https://docs.smith.langchain.com/evaluation/overview",
+    icon: <GaugeIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "structured-outputs",
+    title: "Structured outputs",
+    href: "https://platform.openai.com/docs/guides/structured-outputs",
+    icon: <BracesIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "fallback-rate-limit",
+    title: "Fallback/rate-limit handling",
+    href: "https://platform.openai.com/docs/guides/rate-limits",
+    icon: <RefreshCwIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
+  },
+  {
+    key: "document-extraction",
+    title: "Document extraction",
+    href: "https://en.wikipedia.org/wiki/Information_extraction",
+    icon: <FileTextIcon aria-hidden />,
+    categories: ["AI / ML / Agents"],
   },
   {
     key: "git",
@@ -310,14 +549,14 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["DevOps / Infra"],
   },
   {
     key: "github",
     title: "GitHub",
     href: "https://github.com",
     icon: <GitHubIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["DevOps / Infra"],
   },
   {
     key: "docker",
@@ -331,14 +570,98 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["DevOps / Infra"],
   },
   {
     key: "vercel",
     title: "Vercel",
     href: "https://vercel.com",
     icon: <VercelIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["DevOps / Infra"],
+  },
+  {
+    key: "cicd",
+    title: "CI/CD pipelines",
+    href: "https://www.redhat.com/en/topics/devops/what-is-cicd",
+    icon: <WorkflowIcon aria-hidden />,
+    categories: ["DevOps / Infra"],
+  },
+  {
+    key: "aws",
+    title: "AWS",
+    href: "https://aws.amazon.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["DevOps / Infra"],
+  },
+  {
+    key: "render",
+    title: "Render",
+    href: "https://render.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden>
+        <path
+          d="M18.263.007c-3.121-.147-5.744 2.109-6.192 5.082-.018.138-.045.272-.067.405-.696 3.703-3.936 6.507-7.827 6.507-1.388 0-2.691-.356-3.825-.979a.2024.2024 0 0 0-.302.178V24H12v-8.999c0-1.656 1.338-3 2.987-3h2.988c3.382 0 6.103-2.817 5.97-6.244-.12-3.084-2.61-5.603-5.682-5.75"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    categories: ["DevOps / Infra"],
+  },
+  {
+    key: "linux-cli",
+    title: "Linux & CLI",
+    href: "https://en.wikipedia.org/wiki/Linux",
+    icon: <SquareTerminalIcon aria-hidden />,
+    categories: ["DevOps / Infra"],
+  },
+  {
+    key: "unit-testing",
+    title: "Unit testing",
+    href: "https://vitest.dev/guide/",
+    icon: <FlaskConicalIcon aria-hidden />,
+    categories: ["Practices"],
+  },
+  {
+    key: "code-reviews",
+    title: "Code reviews",
+    href: "https://google.github.io/eng-practices/reviewer/",
+    icon: <GitPullRequestIcon aria-hidden />,
+    categories: ["Practices"],
+  },
+  {
+    key: "sdlc-ownership",
+    title: "SDLC ownership",
+    href: "https://en.wikipedia.org/wiki/Systems_development_life_cycle",
+    icon: <RepeatIcon aria-hidden />,
+    categories: ["Practices"],
+  },
+  {
+    key: "monitoring-logging",
+    title: "Monitoring & logging",
+    href: "https://sre.google/sre-book/monitoring-distributed-systems/",
+    icon: <ActivityIcon aria-hidden />,
+    categories: ["Practices"],
+  },
+  {
+    key: "production-support",
+    title: "Production support",
+    href: "https://sre.google/workbook/incident-response/",
+    icon: <LifeBuoyIcon aria-hidden />,
+    categories: ["Practices"],
+  },
+  {
+    key: "post-deployment-validation",
+    title: "Post-deployment validation",
+    href: "https://en.wikipedia.org/wiki/Smoke_testing_(software)",
+    icon: <ListChecksIcon aria-hidden />,
+    categories: ["Practices"],
   },
   {
     key: "openpanel",
