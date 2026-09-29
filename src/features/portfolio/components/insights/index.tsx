@@ -40,7 +40,7 @@ export async function Insights() {
 
       <InsightsMetrics summary={data.summary} changes={data.changes} />
 
-      <InsightsChart series={data.series} figureNumber={9} />
+      <InsightsChart series={data.series} figureNumber={7} />
     </Panel>
   )
 }

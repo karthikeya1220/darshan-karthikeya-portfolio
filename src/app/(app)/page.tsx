@@ -9,7 +9,6 @@ import { CrosshairOverlay } from "@/components/crosshair-overlay"
 import { SectionReveal } from "@/components/section-reveal"
 import { SheetIndex } from "@/components/sheet-index"
 import { Awards } from "@/features/portfolio/components/awards"
-import { Certifications } from "@/features/portfolio/components/certifications"
 import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
 import {
@@ -80,9 +79,6 @@ export default function HomePage() {
             <Separator />
 
             <Awards />
-            <Separator />
-
-            <Certifications />
             <Separator />
 
             <SectionReveal>

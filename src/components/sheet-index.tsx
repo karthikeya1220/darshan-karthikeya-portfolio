@@ -16,7 +16,6 @@ const SHEETS = [
   { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
   { id: "awards", label: "Awards" },
-  { id: "certs", label: "Certifications" },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
   { id: "now", label: "Now" },

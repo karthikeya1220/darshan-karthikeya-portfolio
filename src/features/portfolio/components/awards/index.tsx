@@ -1,6 +1,5 @@
 import { compareDesc } from "date-fns"
 
-import { CollapsibleList } from "@/components/collapsible-list"
 import {
   Panel,
   PanelHeader,
@@ -10,7 +9,7 @@ import {
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 import { AWARDS } from "@/features/portfolio/data/awards"
 
-import { AwardItem } from "./award-item"
+import { AwardPlaque } from "./award-plaque"
 
 const SORTED_AWARDS = [...AWARDS].sort((a, b) => {
   return compareDesc(new Date(a.date), new Date(b.date))
@@ -29,12 +28,11 @@ export function Awards() {
         </PanelTitle>
       </PanelHeader>
 
-      <CollapsibleList
-        items={SORTED_AWARDS}
-        max={6}
-        keyExtractor={(item) => item.id}
-        renderItem={(item) => <AwardItem award={item} />}
-      />
+      <div className="grid gap-3 p-4 sm:grid-cols-3">
+        {SORTED_AWARDS.map((award) => (
+          <AwardPlaque key={award.id} award={award} />
+        ))}
+      </div>
     </Panel>
   )
 }

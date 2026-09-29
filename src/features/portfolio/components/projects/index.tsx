@@ -1,3 +1,4 @@
+import { CalendlyCarousel } from "@/components/ui/connected-carousel"
 import {
   Panel,
   PanelHeader,
@@ -7,9 +8,7 @@ import {
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 
-import { BuildLog } from "./build-log"
-import { MaterialsSchedule } from "./materials-schedule"
-import { ProjectSheet } from "./project-sheet"
+import { CAROUSEL_ITEMS } from "./carousel-items"
 
 const ID = "projects"
 
@@ -24,15 +23,11 @@ export function Projects() {
         </PanelTitle>
       </PanelHeader>
 
-      <BuildLog projects={PROJECTS} />
-
-      <div className="grid gap-3 p-4 sm:grid-cols-2">
-        {PROJECTS.map((project, index) => (
-          <ProjectSheet key={project.id} project={project} index={index} />
-        ))}
-      </div>
-
-      <MaterialsSchedule projects={PROJECTS} />
+      <CalendlyCarousel
+        items={CAROUSEL_ITEMS}
+        autoPlayInterval={6000}
+        label="Projects"
+      />
     </Panel>
   )
 }
