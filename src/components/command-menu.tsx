@@ -1,13 +1,12 @@
 "use client"
 
-import React, { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useState } from "react"
 import { copyToClipboardWithEvent } from "@/utils/copy"
 import { useRouter } from "@bprogress/next/app"
 import {
-  BriefcaseBusinessIcon,
+  CopyIcon,
   CornerDownLeftIcon,
   DownloadIcon,
-  GraduationCapIcon,
   MoonStarIcon,
   SunMediumIcon,
 } from "lucide-react"
@@ -26,17 +25,12 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 import { toast } from "@/components/ui/toast"
-import type { DocPreview } from "@/features/doc/types/document"
+import { SHEETS } from "@/components/sheet-index"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
+import { USER } from "@/features/portfolio/data/user"
 
-import {
-  FavouriteIcon,
-  GridViewIcon,
-  NewsIcon,
-  ReactIcon,
-  SearchIcon,
-} from "./icons"
+import { FavouriteIcon, SearchIcon } from "./icons"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 
@@ -68,25 +62,11 @@ const MENU_LINKS: CommandLinkItem[] = [
   },
 ]
 
-const PORTFOLIO_LINKS: CommandLinkItem[] = [
-  {
-    title: "Hello",
-    href: "/#hello",
-    kind: "page",
-  },
-  {
-    title: "Experience",
-    href: "/#experience",
-    kind: "page",
-    icon: <BriefcaseBusinessIcon />,
-  },
-  {
-    title: "Education",
-    href: "/#education",
-    kind: "page",
-    icon: <GraduationCapIcon />,
-  },
-]
+const SECTION_LINK_ITEMS: CommandLinkItem[] = SHEETS.map((sheet) => ({
+  title: sheet.label,
+  href: `/#${sheet.id}`,
+  kind: "page",
+}))
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
@@ -122,10 +102,8 @@ function CommandMenuItem({
 }
 
 export function CommandMenu({
-  docs,
   enabledHotkeys = false,
 }: {
-  docs: DocPreview[]
   enabledHotkeys?: boolean
 }) {
   const router = useRouter()
@@ -139,26 +117,33 @@ export function CommandMenu({
 
   const [click] = useClickSound()
 
-  useHotkeys(
-    "mod+k, slash",
-    (e) => {
-      e.preventDefault()
+  const toggleFromKeyboard = useCallback((e: KeyboardEvent) => {
+    e.preventDefault()
 
-      setOpen((open) => {
-        if (!open) {
-          trackEvent({
-            name: "open_command_menu",
-            properties: {
-              method: "keyboard",
-              key: e.key === "/" ? "/" : e.metaKey ? "cmd+k" : "ctrl+k",
-            },
-          })
-        }
-        return !open
-      })
-    },
-    { enabled: enabledHotkeys }
-  )
+    setOpen((wasOpen) => {
+      if (!wasOpen) {
+        trackEvent({
+          name: "open_command_menu",
+          properties: {
+            method: "keyboard",
+            key: e.key === "/" ? "/" : e.metaKey ? "cmd+k" : "ctrl+k",
+          },
+        })
+      }
+      return !wasOpen
+    })
+  }, [])
+
+  // One toggle per keypress: mod+k also works while typing in the search
+  // input (the palette autofocuses it), slash stays page-level only.
+  useHotkeys("mod+k", toggleFromKeyboard, {
+    enabled: enabledHotkeys,
+    enableOnFormTags: ["input"],
+  })
+
+  useHotkeys("slash", toggleFromKeyboard, {
+    enabled: enabledHotkeys,
+  })
 
   const handleOpenLink = useCallback(
     (href: string, openInNewTab = false) => {
@@ -212,18 +197,6 @@ export function CommandMenu({
     [click, setTheme]
   )
 
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
-
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
-
   return (
     <>
       <Button
@@ -275,7 +248,7 @@ export function CommandMenu({
           </CommandGroup>
 
           <CommandGroup heading="Sections">
-            {PORTFOLIO_LINKS.map((item) => (
+            {SECTION_LINK_ITEMS.map((item) => (
               <CommandMenuItem
                 key={item.href}
                 onHighlight={() => setSelectedCommandKind(item.kind)}
@@ -303,6 +276,28 @@ export function CommandMenu({
             ))}
           </CommandGroup>
 
+          <CommandGroup heading="Commands">
+            {OTHER_LINK_ITEMS.map((item) => (
+              <CommandMenuItem
+                key={item.href}
+                onHighlight={() => setSelectedCommandKind(item.kind)}
+                onSelect={() => handleOpenLink(item.href)}
+              >
+                {item.icon}
+                <p className="line-clamp-1">{item.title}</p>
+              </CommandMenuItem>
+            ))}
+            <CommandMenuItem
+              onHighlight={() => setSelectedCommandKind("command")}
+              onSelect={() =>
+                handleCopyText(atob(USER.emailB64), "Email copied")
+              }
+            >
+              <CopyIcon />
+              Copy email
+            </CommandMenuItem>
+          </CommandGroup>
+
           <CommandGroup heading="Theme">
             <CommandMenuItem
               onHighlight={() => setSelectedCommandKind("command")}
@@ -328,9 +323,17 @@ export function CommandMenu({
           </CommandGroup>
         </CommandList>
 
-        <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl px-4 text-xs font-medium">
-          <div className="flex items-center gap-2 max-sm:hidden">
-            <span>{selectedCommandKind === "link" ? "Open" : "Navigate"}</span>
+        {/* In-flow below the scrollable list: an absolute overlay here would
+            sit on top of the last rows, hiding and blocking them. */}
+        <div className="flex h-10 shrink-0 items-center justify-between gap-2 border-t border-line px-4 text-xs font-medium max-sm:hidden">
+          <div className="flex items-center gap-2">
+            <span>
+              {selectedCommandKind === "link"
+                ? "Open"
+                : selectedCommandKind === "command"
+                  ? "Run"
+                  : "Navigate"}
+            </span>
             <Kbd>
               <CornerDownLeftIcon className="size-3" />
             </Kbd>

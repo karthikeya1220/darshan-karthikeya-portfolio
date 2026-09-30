@@ -5,7 +5,7 @@ import { useReducedMotion } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
-const SHEETS = [
+export const SHEETS = [
   { id: "overview", label: "Overview" },
   { id: "contributions", label: "Contributions" },
   { id: "hello", label: "About" },

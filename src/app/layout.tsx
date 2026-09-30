@@ -81,24 +81,24 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.ico",
+        url: "/favicon.ico?v=2",
         sizes: "32x32",
       },
       {
-        url: "/favicon.svg",
+        url: "/favicon.svg?v=2",
         sizes: "any",
         type: "image/svg+xml",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/favicon-dark.svg",
+        url: "/favicon-dark.svg?v=2",
         sizes: "any",
         type: "image/svg+xml",
         media: "(prefers-color-scheme: dark)",
       },
     ],
     apple: {
-      url: "/apple-touch-icon.png",
+      url: "/apple-touch-icon.png?v=2",
       type: "image/png",
       sizes: "180x180",
     },

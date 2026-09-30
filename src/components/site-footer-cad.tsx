@@ -1,11 +1,10 @@
-import Link from "next/link"
-
 import { LICENSE, SOURCE_CODE_GITHUB_URL } from "@/config/site"
 import type { BuildInfo } from "@/lib/build-info"
 import { getBuildInfo, getStack } from "@/lib/build-info"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
+import { SiteHeaderMark } from "@/components/site-header-mark"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 // Imported here rather than through `@/config/site`, which client components
@@ -182,13 +181,10 @@ export function SiteFooterCad() {
         <div className="screen-line-top h-4" />
 
         <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
-          <Link
-            href="/"
-            className="mr-auto text-sm font-medium text-muted-foreground transition-[color] hover:text-foreground"
-            aria-label="Home"
-          >
-            DK
-          </Link>
+          <SiteHeaderMark
+            className="mr-auto text-muted-foreground transition-colors hover:text-foreground"
+            svgClassName="size-5"
+          />
 
           <a
             className="flex items-center transition-[color] hover:text-foreground"
