@@ -8,6 +8,7 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { CrosshairOverlay } from "@/components/crosshair-overlay"
 import { SectionReveal } from "@/components/section-reveal"
 import { SheetIndex } from "@/components/sheet-index"
+import { AvailabilityConsole } from "@/features/portfolio/components/availability-console"
 import { Awards } from "@/features/portfolio/components/awards"
 import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
@@ -25,9 +26,9 @@ import { Now } from "@/features/portfolio/components/now"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
-import { SocialLinks } from "@/features/portfolio/components/social-links"
 import { TechFilterProvider } from "@/features/portfolio/components/tech-filter-context"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
+import { TerminalCta } from "@/features/portfolio/components/terminal-cta"
 import { Testimonials } from "@/features/portfolio/components/testimonials"
 import { USER } from "@/features/portfolio/data/user"
 
@@ -56,7 +57,6 @@ export default function HomePage() {
             <Separator />
 
             <Overview />
-            <SocialLinks />
             <GitHubContributions />
             <Separator />
 
@@ -83,6 +83,16 @@ export default function HomePage() {
 
             <SectionReveal>
               <Testimonials />
+            </SectionReveal>
+            <Separator />
+
+            <SectionReveal>
+              <AvailabilityConsole />
+            </SectionReveal>
+            <Separator />
+
+            <SectionReveal>
+              <TerminalCta />
             </SectionReveal>
             <Separator />
 

@@ -33,10 +33,10 @@ export const USER: User = {
       experienceId: "quantaglobal",
     },
   ],
-  about: `- I'm Darshan Karthikeya — a Full Stack Developer and Applied AI Engineer with production experience building MERN and Next.js platforms.
-- Passionate about building AI-powered recruitment systems, wireframe-to-code generators, and real-time analytics dashboards.
-- Currently pursuing B.Tech in Computer Science at IIITDM Kancheepuram (2022-2026). My experience spans scalable web systems, applied machine learning, and developer tooling.
-- IEEE Publication — Research paper accepted at TENCON 2026: "Impact-Guided Slice Selection for Efficient Human-in-the-Loop Brain Tumor Segmentation" (NeuroSlice).
+  about: `- I'm a Full Stack Developer and Applied AI Engineer shipping production-grade MERN and Next.js platforms.
+- I build AI-powered recruitment systems, wireframe-to-code generators, and real-time analytics dashboards.
+- Pursuing B.Tech in Computer Science at IIITDM Kancheepuram (2022–2026), with work spanning scalable web systems, applied machine learning, and developer tooling.
+- IEEE paper accepted at TENCON 2026: "Impact-Guided Slice Selection for Efficient Human-in-the-Loop Brain Tumor Segmentation" (NeuroSlice).
 `,
   avatar: "https://avatars.githubusercontent.com/u/169545053?v=4",
   avatarSketch: "https://avatars.githubusercontent.com/u/169545053?v=4",

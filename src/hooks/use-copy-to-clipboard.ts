@@ -36,15 +36,21 @@ export function useCopyToClipboard({
 
         setState("done")
 
-        haptic("success")
-        tiksSuccess()
+        // Feedback helpers are best-effort: a throw here must not overwrite
+        // the successful copy with the error state.
+        try {
+          haptic("success")
+          tiksSuccess()
+        } catch {}
 
         onCopySuccess?.(finalText)
       } catch (error) {
         setState("error")
 
-        haptic("error")
-        tiksError()
+        try {
+          haptic("error")
+          tiksError()
+        } catch {}
 
         onCopyError?.(error instanceof Error ? error : new Error("Copy failed"))
       } finally {

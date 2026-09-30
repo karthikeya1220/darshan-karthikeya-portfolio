@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils"
 
 const SHEETS = [
   { id: "overview", label: "Overview" },
-  { id: "socials", label: "Social links" },
   { id: "contributions", label: "Contributions" },
   { id: "hello", label: "About" },
   { id: "stack", label: "Tech stack" },
@@ -17,6 +16,8 @@ const SHEETS = [
   { id: "projects", label: "Projects" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
+  { id: "availability", label: "Availability" },
+  { id: "terminal", label: "Terminal" },
   { id: "contact", label: "Contact" },
   { id: "now", label: "Now" },
   { id: "insights", label: "Insights" },
