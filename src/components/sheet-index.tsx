@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useReducedMotion } from "motion/react"
 
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 
 export const SHEETS = [
   { id: "overview", label: "Overview" },
@@ -30,6 +31,7 @@ export const SHEETS = [
 export function SheetIndex() {
   const [activeId, setActiveId] = useState<string>(SHEETS[0].id)
   const reduce = useReducedMotion()
+  const [click] = useClickSound()
 
   useEffect(() => {
     const sections = SHEETS.map((sheet) =>
@@ -64,6 +66,7 @@ export function SheetIndex() {
                 href={`#${sheet.id}`}
                 onClick={(event) => {
                   event.preventDefault()
+                  click()
                   document.getElementById(sheet.id)?.scrollIntoView({
                     behavior: reduce ? "auto" : "smooth",
                     block: "start",

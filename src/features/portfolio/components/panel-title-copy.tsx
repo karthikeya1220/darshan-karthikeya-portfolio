@@ -3,6 +3,7 @@
 import { LinkIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 
 export function PanelTitleCopy({
   id,
@@ -12,7 +13,10 @@ export function PanelTitleCopy({
   id: string
   className?: string
 }) {
+  const [click] = useClickSound()
+
   const handleCopy = () => {
+    click()
     const url = `${window.location.origin}#${id}`
     navigator.clipboard.writeText(url)
   }

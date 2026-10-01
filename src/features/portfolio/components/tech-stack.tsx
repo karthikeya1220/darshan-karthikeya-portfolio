@@ -1,5 +1,7 @@
 "use client"
 
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
+
 import { TECH_STACK } from "../data/tech-stack"
 import type { TechStack as TechStackType } from "../types/tech-stack"
 import { Panel, PanelHeader, PanelTitle } from "./panel"
@@ -69,13 +71,17 @@ export function TechStack() {
 
 function TechBadge({ item }: { item: TechStackType }) {
   const { activeFilter, setActiveFilter } = useTechFilter()
+  const [click] = useClickSound()
   const isActive = activeFilter === item.title
   const isDimmed = activeFilter !== null && !isActive
 
   return (
     <button
       type="button"
-      onClick={() => setActiveFilter(isActive ? null : item.title)}
+      onClick={() => {
+        click()
+        setActiveFilter(isActive ? null : item.title)
+      }}
       className={[
         "flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full px-2 font-mono text-xs inset-ring-1 inset-ring-border transition-[opacity,background-color] duration-200 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80",
         isActive

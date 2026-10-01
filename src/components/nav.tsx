@@ -1,9 +1,12 @@
+"use client"
+
 import React from "react"
 import type { Route } from "next"
 import Link from "next/link"
 
-import type { NavItem } from "@/types/nav"
+import type { NavItem as NavItemType } from "@/types/nav"
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 
 export function Nav({
   items,
@@ -11,7 +14,7 @@ export function Nav({
   className,
   exactMatch = false,
 }: {
-  items: NavItem<Route>[]
+  items: NavItemType<Route>[]
   activeId?: string
   className?: string
   exactMatch?: boolean
@@ -45,14 +48,21 @@ export function Nav({
 
 export function NavItem({
   className,
+  onClick,
   ...props
 }: React.ComponentProps<typeof Link>) {
+  const [click] = useClickSound()
+
   return (
     <Link
       className={cn(
         "text-sm font-medium tracking-wide text-muted-foreground transition-[color] hover:text-foreground aria-[current=page]:text-foreground",
         className
       )}
+      onClick={(event) => {
+        click()
+        onClick?.(event)
+      }}
       {...props}
     />
   )

@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 
 /**
  * DK monogram mark — the same rounded-tile glyph used by the favicon.
@@ -14,8 +17,15 @@ export function SiteHeaderMark({
   className?: string
   svgClassName?: string
 }) {
+  const [click] = useClickSound()
+
   return (
-    <Link href="/" aria-label="Home" className={cn("shrink-0", className)}>
+    <Link
+      href="/"
+      aria-label="Home"
+      className={cn("shrink-0", className)}
+      onClick={() => click()}
+    >
       <svg
         viewBox="0 0 64 64"
         aria-hidden

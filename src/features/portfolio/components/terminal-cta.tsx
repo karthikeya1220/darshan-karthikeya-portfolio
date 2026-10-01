@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { useInView, useReducedMotion } from "motion/react"
 
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 import {
   Panel,
   PanelContent,
@@ -33,6 +34,8 @@ export function TerminalCta() {
   const [cmdChars, setCmdChars] = useState(0)
   const [outChars, setOutChars] = useState(0)
   const [showCta, setShowCta] = useState(false)
+
+  const [click] = useClickSound()
 
   // Reduced motion skips the sequence and renders the final transcript.
   const finished = !!reduce && inView
@@ -82,6 +85,7 @@ export function TerminalCta() {
   }, [inView, reduce])
 
   const handleContact = () => {
+    click()
     document.getElementById("contact")?.scrollIntoView({
       behavior: reduce ? "auto" : "smooth",
       block: "start",

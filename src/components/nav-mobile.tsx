@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import type { NavItem } from "@/types/nav"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { Button } from "@/components/ui/button"
 import {
@@ -20,6 +21,8 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
   const isDesktop = useMediaQuery("(min-width: 40rem)") // sm breakpoint
 
   const pathname = usePathname()
+
+  const [click] = useClickSound()
 
   const handleOpenChange = useCallback((open: boolean) => {
     setOpen(open)
@@ -54,7 +57,10 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
                 className="rounded-lg px-3 py-1.5 text-base aria-[current=page]:bg-accent"
-                onClick={() => handleOpenChange(false)}
+                onClick={() => {
+                  click()
+                  handleOpenChange(false)
+                }}
               >
                 {link.title}
               </Link>
@@ -71,13 +77,20 @@ export default NavMobile
 function NavMobileTrigger(
   props: Omit<React.ComponentProps<typeof Button>, "children">
 ) {
+  const [click] = useClickSound()
+  const { onClick, ...rest } = props
+
   return (
     <Button
       className="group relative flex touch-manipulation flex-col gap-1 border-none before:absolute before:-inset-x-2 before:-top-8 before:-bottom-1 active:scale-none aria-expanded:bg-accent"
       variant="ghost"
       size="icon-sm"
       aria-label="Toggle Menu"
-      {...props}
+      onClick={(event) => {
+        click()
+        onClick?.(event)
+      }}
+      {...rest}
     >
       <span className="flex h-0.5 w-4 transform rounded-[1px] bg-foreground transition-transform group-data-popup-open:translate-y-0.75 group-data-popup-open:rotate-45" />
       <span className="flex h-0.5 w-4 transform rounded-[1px] bg-foreground transition-transform group-data-popup-open:-translate-y-0.75 group-data-popup-open:-rotate-45" />

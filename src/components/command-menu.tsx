@@ -147,6 +147,7 @@ export function CommandMenu({
 
   const handleOpenLink = useCallback(
     (href: string, openInNewTab = false) => {
+      click()
       setOpen(false)
 
       trackEvent({
@@ -164,20 +165,24 @@ export function CommandMenu({
         router.push(href)
       }
     },
-    [router]
+    [click, router]
   )
 
-  const handleCopyText = useCallback((text: string, message: string) => {
-    setOpen(false)
-    copyToClipboardWithEvent(text, {
-      name: "command_menu_action",
-      properties: {
-        action: "copy",
-        text: text,
-      },
-    })
-    toast.add({ type: "success", title: message })
-  }, [])
+  const handleCopyText = useCallback(
+    (text: string, message: string) => {
+      click()
+      setOpen(false)
+      copyToClipboardWithEvent(text, {
+        name: "command_menu_action",
+        properties: {
+          action: "copy",
+          text: text,
+        },
+      })
+      toast.add({ type: "success", title: message })
+    },
+    [click]
+  )
 
   const createThemeHandler = useCallback(
     (theme: "light" | "dark" | "system") => () => {
@@ -204,6 +209,7 @@ export function CommandMenu({
         size="sm"
         className="gap-2 text-muted-foreground"
         onClick={() => {
+          click()
           setOpen(true)
           trackEvent({
             name: "open_command_menu",

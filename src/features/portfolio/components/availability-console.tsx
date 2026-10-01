@@ -5,6 +5,7 @@ import { ArrowDownIcon, CheckIcon, CopyIcon } from "lucide-react"
 import { useInView, useReducedMotion } from "motion/react"
 
 import { cn } from "@/lib/utils"
+import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Magnet } from "@/components/react-bits/magnet"
@@ -37,6 +38,8 @@ export function AvailabilityConsole() {
   const [typed, setTyped] = useState("")
   const [clock, setClock] = useState("")
   const { state: copyState, copy } = useCopyToClipboard()
+
+  const [click] = useClickSound()
 
   // Reduced motion shows the full line without animating through it.
   const displayTyped = reduce && typedInView ? REPLY_TIME : typed
@@ -135,7 +138,10 @@ export function AvailabilityConsole() {
                     ? "Email copied to clipboard"
                     : "Copy email address"
                 }
-                onClick={() => copy(() => atob(USER.emailB64))}
+                onClick={() => {
+                  click()
+                  copy(() => atob(USER.emailB64))
+                }}
               >
                 {copyState === "done" ? (
                   <CheckIcon aria-hidden />
