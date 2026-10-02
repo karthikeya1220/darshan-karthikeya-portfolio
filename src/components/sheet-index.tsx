@@ -3,30 +3,85 @@
 import { useEffect, useState } from "react"
 import { useReducedMotion } from "motion/react"
 
-import { cn } from "@/lib/utils"
 import { useClickSound } from "@/hooks/soundcn/use-click-sound"
+import { ChapterScrubber, type Chapter } from "@/components/ui/chapter-scrubber"
 
 export const SHEETS = [
-  { id: "overview", label: "Overview" },
-  { id: "contributions", label: "Contributions" },
-  { id: "hello", label: "About" },
-  { id: "stack", label: "Tech stack" },
-  { id: "professional-experience", label: "Professional experience" },
-  { id: "college-experience", label: "College experience" },
-  { id: "education", label: "Education" },
-  { id: "projects", label: "Projects" },
-  { id: "awards", label: "Awards" },
-  { id: "testimonials", label: "Testimonials" },
-  { id: "availability", label: "Availability" },
-  { id: "terminal", label: "Terminal" },
-  { id: "contact", label: "Contact" },
-  { id: "now", label: "Now" },
-  { id: "insights", label: "Insights" },
+  {
+    id: "overview",
+    label: "Overview",
+    note: "Snapshot of who I am and what I ship.",
+  },
+  {
+    id: "contributions",
+    label: "Contributions",
+    note: "Open-source contributions and commit activity.",
+  },
+  {
+    id: "hello",
+    label: "About",
+    note: "The longer version, beyond the résumé.",
+  },
+  {
+    id: "stack",
+    label: "Tech stack",
+    note: "Languages, frameworks, and tools I use.",
+  },
+  {
+    id: "professional-experience",
+    label: "Professional experience",
+    note: "Internships and roles shipped in production.",
+  },
+  {
+    id: "college-experience",
+    label: "College experience",
+    note: "Lead roles and teams at IIITDM.",
+  },
+  {
+    id: "education",
+    label: "Education",
+    note: "Degrees, coursework, and academic timeline.",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+    note: "Selected builds with live demos and source.",
+  },
+  { id: "awards", label: "Awards", note: "Hackathon wins and recognitions." },
+  {
+    id: "testimonials",
+    label: "Testimonials",
+    note: "What teammates and supervisors say.",
+  },
+  {
+    id: "availability",
+    label: "Availability",
+    note: "Open to internships and full-time roles.",
+  },
+  {
+    id: "terminal",
+    label: "Terminal",
+    note: "An interactive shell with résumé commands.",
+  },
+  { id: "contact", label: "Contact", note: "Every way to reach me." },
+  { id: "now", label: "Now", note: "What I am focused on this month." },
+  {
+    id: "insights",
+    label: "Insights",
+    note: "Notes and write-ups from what I learn.",
+  },
 ] as const
 
+const CHAPTERS: Chapter[] = SHEETS.map((sheet, index) => ({
+  id: sheet.id,
+  title: sheet.label,
+  description: sheet.note,
+  meta: String(index + 1).padStart(2, "0"),
+}))
+
 /**
- * Fixed sheet register for wide viewports: numbers every section and
- * tracks the one crossing the viewport's reading line.
+ * Fixed sheet register for wide viewports: a magnifying tick rail that
+ * numbers every section and tracks the one crossing the viewport's reading line.
  */
 export function SheetIndex() {
   const [activeId, setActiveId] = useState<string>(SHEETS[0].id)
@@ -51,51 +106,26 @@ export function SheetIndex() {
     return () => observer.disconnect()
   }, [])
 
+  const foundIndex = SHEETS.findIndex((sheet) => sheet.id === activeId)
+
   return (
     <nav
       aria-label="Sheet index"
       className="fixed top-1/2 left-5 z-40 hidden -translate-y-1/2 xl:block"
     >
-      <ol className="border-l border-line">
-        {SHEETS.map((sheet, index) => {
-          const active = sheet.id === activeId
-
-          return (
-            <li key={sheet.id}>
-              <a
-                href={`#${sheet.id}`}
-                onClick={(event) => {
-                  event.preventDefault()
-                  click()
-                  document.getElementById(sheet.id)?.scrollIntoView({
-                    behavior: reduce ? "auto" : "smooth",
-                    block: "start",
-                  })
-                  window.history.replaceState(null, "", `#${sheet.id}`)
-                }}
-                className={cn(
-                  "group flex items-center gap-2 px-2 py-[3px] font-mono text-[10px]/none tabular-nums transition-colors",
-                  active
-                    ? "text-foreground"
-                    : "text-muted-foreground/45 hover:text-muted-foreground"
-                )}
-              >
-                <span
-                  className={cn(
-                    "h-px shrink-0 transition-all duration-300",
-                    active ? "w-3.5 bg-foreground" : "w-1.5 bg-line"
-                  )}
-                  aria-hidden
-                />
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:max-w-44 group-hover:opacity-100 group-focus-visible:max-w-44 group-focus-visible:opacity-100">
-                  {sheet.label}
-                </span>
-              </a>
-            </li>
-          )
-        })}
-      </ol>
+      <ChapterScrubber
+        label="Sheet index"
+        chapters={CHAPTERS}
+        currentIndex={foundIndex === -1 ? 0 : foundIndex}
+        onSelect={(chapter) => {
+          click()
+          document.getElementById(chapter.id)?.scrollIntoView({
+            behavior: reduce ? "auto" : "smooth",
+            block: "start",
+          })
+          window.history.replaceState(null, "", `#${chapter.id}`)
+        }}
+      />
     </nav>
   )
 }
