@@ -5,20 +5,8 @@ import { formatNumber } from "@/utils/format"
 import { format, parseISO } from "date-fns"
 import { LoaderIcon } from "lucide-react"
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import ContributionSkyline from "@/components/ui/contribution-skyline"
 import type { Activity } from "@/registry/components/contribution-graph"
-import {
-  ContributionGraph,
-  ContributionGraphBlock,
-  ContributionGraphCalendar,
-  ContributionGraphFooter,
-  ContributionGraphLegend,
-  ContributionGraphTotalCount,
-} from "@/registry/components/contribution-graph"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function GitHubContributionGraph({
@@ -32,78 +20,35 @@ export function GitHubContributionGraph({
     return null
   }
 
+  const totalCount = data.reduce((sum, activity) => sum + activity.count, 0)
+
   return (
-    <figure>
-      <ContributionGraph
-        className="mx-auto gap-4 py-4"
-        data={data}
-        blockSize={12}
-        blockMargin={2}
-        blockRadius={0}
-        aria-label="GitHub Contributions Graph"
-      >
-        <ContributionGraphCalendar
-          className="px-4 **:data-[slot=month-labels]:text-muted-foreground"
-          title="GitHub Contributions"
-          aria-hidden
+    <figure className="p-4">
+      <ContributionSkyline data={data} palette="mono" />
+      <figcaption className="mt-3 text-sm text-pretty tabular-nums">
+        <span className="mr-2 tracking-wide text-muted-foreground/80">
+          Fig. 2.
+        </span>
+        {formatNumber(totalCount)} contributions,{" "}
+        {format(parseISO(data[0].date), "dd.MM.yyyy")} –{" "}
+        {format(parseISO(data[data.length - 1].date), "dd.MM.yyyy")}. Source:{" "}
+        <a
+          href={SOCIAL.github.href}
+          className="link-underline"
+          target="_blank"
+          rel="noopener"
         >
-          {({ activity, dayIndex, weekIndex }) => (
-            <Tooltip>
-              <TooltipTrigger
-                render={
-                  <g>
-                    <ContributionGraphBlock
-                      activity={activity}
-                      dayIndex={dayIndex}
-                      weekIndex={weekIndex}
-                    />
-                  </g>
-                }
-              />
-              <TooltipContent className="font-sans">
-                <p>
-                  {activity.count} contribution{activity.count > 1 ? "s" : null}{" "}
-                  on {format(parseISO(activity.date), "d MMM yyyy")}
-                </p>
-              </TooltipContent>
-            </Tooltip>
-          )}
-        </ContributionGraphCalendar>
-
-        <ContributionGraphFooter className="px-4 text-sm">
-          <ContributionGraphTotalCount>
-            {({ totalCount }) => (
-              <figcaption className="text-pretty tabular-nums">
-                <span className="mr-2 tracking-wide text-muted-foreground/80">
-                  Fig. 2.
-                </span>
-                {formatNumber(totalCount)} contributions,{" "}
-                {format(parseISO(data[0].date), "dd.MM.yyyy")} –{" "}
-                {format(parseISO(data[data.length - 1].date), "dd.MM.yyyy")}.
-                Source:{" "}
-                <a
-                  href={SOCIAL.github.href}
-                  className="link-underline"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  GitHub
-                </a>
-                .
-              </figcaption>
-            )}
-          </ContributionGraphTotalCount>
-
-          <ContributionGraphLegend aria-hidden />
-        </ContributionGraphFooter>
-      </ContributionGraph>
+          GitHub
+        </a>
+        .
+      </figcaption>
     </figure>
   )
 }
 
 export function GitHubContributionFallback() {
   return (
-    <div className="flex h-45 w-full items-center justify-center">
+    <div className="flex h-90 w-full items-center justify-center">
       <LoaderIcon className="animate-spin text-muted-foreground" />
     </div>
   )

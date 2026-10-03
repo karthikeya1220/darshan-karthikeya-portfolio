@@ -20,6 +20,6 @@ export const getCachedContributions = unstable_cache(
     const data = (await res.json()) as GitHubContributionsResponse
     return data.contributions ?? []
   },
-  ["github-contributions"],
-  { revalidate: 86400 } // Cache for 1 day (86400 seconds)
+  ["github-contributions", "v2"],
+  { revalidate: 3600 } // Cache for 1 hour (3600 seconds)
 )
