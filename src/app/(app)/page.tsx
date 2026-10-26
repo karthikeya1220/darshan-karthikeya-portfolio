@@ -25,6 +25,7 @@ import {
 import { Now } from "@/features/portfolio/components/now"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
+import { OpenSource } from "@/features/portfolio/components/open-source"
 import { Projects } from "@/features/portfolio/components/projects"
 import { TechFilterProvider } from "@/features/portfolio/components/tech-filter-context"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
@@ -76,6 +77,11 @@ export default function HomePage() {
             <Separator />
 
             <Projects />
+            <Separator />
+
+            <SectionReveal>
+              <OpenSource />
+            </SectionReveal>
             <Separator />
 
             <Awards />
