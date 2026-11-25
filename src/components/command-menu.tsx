@@ -221,7 +221,7 @@ export function CommandMenu({
         data-slot="command-menu-trigger"
       >
         <SearchIcon className="size-3.5" />
-        <span className="max-sm:hidden">Search</span>
+        <span className="text-xs sm:text-sm">Search</span>
         <KbdGroup className="max-sm:hidden">
           <Kbd>
             <span className="text-[10px]">&#8984;</span>

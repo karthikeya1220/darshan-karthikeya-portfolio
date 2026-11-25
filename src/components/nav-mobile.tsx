@@ -15,7 +15,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function NavMobile({ items }: { items: NavItem<Route>[] }) {
+export function NavMobile({ items }: { items: NavItem<string>[] }) {
   const [open, setOpen] = useState(false)
 
   const isDesktop = useMediaQuery("(min-width: 40rem)") // sm breakpoint
@@ -37,29 +37,43 @@ export function NavMobile({ items }: { items: NavItem<Route>[] }) {
       <PopoverTrigger render={<NavMobileTrigger />} />
 
       <PopoverContent
-        className="w-48 rounded-xl p-1"
+        className="w-56 max-h-[70vh] overflow-y-auto rounded-xl p-1.5 shadow-xl"
         side="top"
-        align="center"
-        sideOffset={8}
+        align="end"
+        sideOffset={10}
         finalFocus={false}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-0.5">
+          <div className="px-3 py-1 font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
+            Navigation
+          </div>
           {items.map((link) => {
+            const isHash = link.href.includes("#")
+            const hash = isHash ? link.href.split("#")[1] : null
             const isActive =
-              pathname === link.href ||
-              (link.href === "/" // Home page
-                ? ["/", "/index"].includes(pathname || "")
-                : pathname?.startsWith(link.href))
+              !isHash &&
+              (pathname === link.href ||
+                (link.href === "/"
+                  ? ["/", "/index"].includes(pathname || "")
+                  : pathname?.startsWith(link.href)))
 
             return (
               <Link
                 key={link.href}
-                href={link.href}
+                href={link.href as Route}
                 aria-current={isActive ? "page" : undefined}
-                className="rounded-lg px-3 py-1.5 text-base aria-[current=page]:bg-accent"
-                onClick={() => {
+                className="flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-accent aria-[current=page]:bg-accent active:bg-accent/80 touch-manipulation"
+                onClick={(e) => {
                   click()
                   handleOpenChange(false)
+                  if (hash && (pathname === "/" || pathname === "")) {
+                    const el = document.getElementById(hash)
+                    if (el) {
+                      e.preventDefault()
+                      el.scrollIntoView({ behavior: "smooth", block: "start" })
+                      window.history.replaceState(null, "", `#${hash}`)
+                    }
+                  }
                 }}
               >
                 {link.title}

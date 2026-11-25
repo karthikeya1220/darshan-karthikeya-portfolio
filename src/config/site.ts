@@ -25,12 +25,55 @@ export const META_THEME_COLORS = {
 
 export const MAIN_NAV: NavItem<Route>[] = []
 
-export const MOBILE_NAV: NavItem<Route>[] = [
+export const MOBILE_NAV: NavItem[] = [
   {
     title: "Home",
     href: "/",
   },
-  ...MAIN_NAV,
+  {
+    title: "Overview",
+    href: "/#overview",
+  },
+  {
+    title: "About",
+    href: "/#hello",
+  },
+  {
+    title: "Tech Stack",
+    href: "/#stack",
+  },
+  {
+    title: "Experience",
+    href: "/#professional-experience",
+  },
+  {
+    title: "Education",
+    href: "/#education",
+  },
+  {
+    title: "Projects",
+    href: "/#projects",
+  },
+  {
+    title: "Open Source",
+    href: "/#open-source",
+  },
+  {
+    title: "Awards",
+    href: "/#awards",
+  },
+  {
+    title: "Testimonials",
+    href: "/#testimonials",
+  },
+  {
+    title: "Availability",
+    href: "/#availability",
+  },
+  {
+    title: "Get in touch",
+    href: "/#contact",
+  },
 ]
 
 export const X_HANDLE = SOCIAL.github.handle

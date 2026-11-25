@@ -79,14 +79,14 @@ export function SiteFooterCad() {
 
         <div className="screen-line-top h-4" />
 
-        <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
+        <div className="screen-line-top screen-line-bottom flex items-center gap-2 screen-line-bottom-border px-3 py-2 sm:px-4 sm:py-3 text-muted-foreground">
           <SiteHeaderMark
             className="mr-auto text-muted-foreground transition-colors hover:text-foreground"
             svgClassName="size-5"
           />
 
           <a
-            className="flex items-center transition-[color] hover:text-foreground"
+            className="flex size-9 items-center justify-center rounded-md transition-[color,background-color] hover:bg-accent hover:text-foreground touch-manipulation"
             href={githubLink.href}
             target="_blank"
             rel="noopener"
@@ -101,7 +101,7 @@ export function SiteFooterCad() {
           />
 
           <a
-            className="flex items-center transition-[color] hover:text-foreground"
+            className="flex size-9 items-center justify-center rounded-md transition-[color,background-color] hover:bg-accent hover:text-foreground touch-manipulation"
             href={linkedinLink.href}
             target="_blank"
             rel="noopener"

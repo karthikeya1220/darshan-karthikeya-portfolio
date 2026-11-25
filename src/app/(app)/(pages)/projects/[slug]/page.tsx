@@ -34,12 +34,12 @@ export default async function ProjectPage({
   const isOngoing = !end
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="mx-auto max-w-3xl px-2 sm:px-0">
       <div className="mb-6">
         <Button
           variant="ghost"
           size="sm"
-          className="gap-2 text-muted-foreground"
+          className="gap-2 text-muted-foreground touch-manipulation"
           render={<Link href="/" />}
         >
           <ArrowLeftIcon className="size-4" />

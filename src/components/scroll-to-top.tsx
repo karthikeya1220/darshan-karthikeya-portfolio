@@ -29,8 +29,8 @@ export function ScrollToTop({
       data-visible={visible}
       data-scroll-direction={scrollDirection}
       className={cn(
-        "[--bottom:0.5rem] sm:[--bottom:1rem] lg:[--bottom:2rem]",
-        "fixed right-4 bottom-[calc(var(--bottom,0.5rem)+env(safe-area-inset-bottom,0))] z-50 lg:right-8",
+        "[--bottom:4.5rem] sm:[--bottom:1rem] lg:[--bottom:2rem]",
+        "fixed right-3.5 bottom-[calc(var(--bottom,4.5rem)+env(safe-area-inset-bottom,0))] z-50 touch-manipulation sm:right-4 lg:right-8",
         "transition-[background-color,opacity] duration-300 data-[scroll-direction=down]:opacity-30 data-[scroll-direction=up]:opacity-100 data-[visible=false]:opacity-0",
         "data-[scroll-direction=down]:hover:opacity-100",
         "border-none shadow-[inset_0_0_1px] shadow-foreground/20",
