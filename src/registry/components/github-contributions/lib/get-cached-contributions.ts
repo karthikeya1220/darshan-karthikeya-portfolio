@@ -8,7 +8,9 @@ type GitHubContributionsResponse = {
 
 export const getCachedContributions = unstable_cache(
   async (username: string) => {
-    const apiUrl = process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL
+    const apiUrl =
+      process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL ||
+      "https://github-contributions-api.jogruber.de/v4"
     if (!apiUrl) {
       return []
     }

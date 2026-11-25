@@ -23,7 +23,7 @@ export function GitHubContributionGraph({
   const totalCount = data.reduce((sum, activity) => sum + activity.count, 0)
 
   return (
-    <figure className="p-4">
+    <figure className="p-3 sm:p-4">
       <ContributionSkyline data={data} palette="mono" />
       <figcaption className="mt-3 text-sm text-pretty tabular-nums">
         <span className="mr-2 tracking-wide text-muted-foreground/80">

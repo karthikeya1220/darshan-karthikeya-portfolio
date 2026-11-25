@@ -543,25 +543,26 @@ function Stat({
 }) {
   if (align === "stack") {
     return (
-      <div className="min-w-0">
-        <div className="text-[13px] leading-tight" style={{ color: MUTED }}>
+      <div className="min-w-0 overflow-hidden">
+        <div className="truncate text-[12px] leading-tight sm:text-[13px]" style={{ color: MUTED }}>
           {label}
         </div>
-        <div className="mt-1 flex items-baseline gap-1.5">
+        <div className="mt-1 flex min-w-0 flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
           <span
-            className="font-semibold tabular-nums transition-colors duration-500 motion-reduce:transition-none"
+            className="font-semibold tabular-nums transition-colors duration-500 motion-reduce:transition-none text-xl sm:text-[26px]"
             style={{
               color: accent,
-              fontSize: size,
               lineHeight: 1,
               letterSpacing: "-0.02em",
             }}
           >
             {value}
           </span>
-          <span className="text-[14px]">{unit}</span>
+          <span className="min-w-0 truncate text-xs text-muted-foreground sm:text-[13px]">
+            {unit}
+          </span>
         </div>
-        <div className="mt-0.5 truncate text-[12px]" style={{ color: MUTED }}>
+        <div className="mt-0.5 truncate text-[11px] sm:text-[12px]" style={{ color: MUTED }}>
           {sub}
         </div>
       </div>
@@ -1785,7 +1786,7 @@ export default function ContributionSkyline({
             }}
           >
             <div className="min-h-0 overflow-hidden">
-              <div className="grid grid-cols-2 gap-4 px-3 pt-4 pb-1 sm:px-4 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-x-3 gap-y-4 px-3 pt-4 pb-1 sm:gap-4 sm:px-4 md:grid-cols-4">
                 {statBlocks.map((b) => (
                   <Stat
                     key={b.label}
