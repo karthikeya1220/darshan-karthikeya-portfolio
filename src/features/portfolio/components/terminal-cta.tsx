@@ -154,7 +154,7 @@ export function TerminalCta() {
               <button
                 type="button"
                 onClick={handleContact}
-                className="rounded-sm text-foreground transition-colors outline-none hover:text-muted-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="rounded-sm text-foreground transition-colors outline-none hover:text-muted-foreground focus-visible:ring-3 focus-visible:ring-ring/50 touch-manipulation py-1"
               >
                 <span className="text-muted-foreground">[</span> enter{" "}
                 <span className="text-muted-foreground">]</span> get in touch →

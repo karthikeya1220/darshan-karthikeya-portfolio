@@ -354,7 +354,7 @@ export function CalendlyCarousel({
   const activeDimensions = {
     desktop: { width: 762, height: 513 },
     tablet: { width: 560, height: 440 },
-    mobile: { width: Math.min(340, containerWidth - 56), height: 490 },
+    mobile: { width: Math.min(340, containerWidth - 32), height: 490 },
   }[tier]
 
   const cardTransition = reduceMotion ? { duration: 0 } : TRANSITION_SPRING
@@ -762,7 +762,7 @@ export function CalendlyCarousel({
                           “
                         </span>
 
-                        <p className="font-serif text-xs/snug text-foreground/85 sm:text-base md:text-lg">
+                        <p className="line-clamp-3 font-serif text-xs/snug text-foreground/85 sm:line-clamp-none sm:text-base md:text-lg">
                           “{item.quote}”
                         </p>
                       </div>
@@ -800,7 +800,7 @@ export function CalendlyCarousel({
                           {item.caseStudyHref && (
                             <a
                               href={item.caseStudyHref}
-                              className="inline-flex items-center gap-1 font-mono text-[10px] tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground"
+                              className="inline-flex items-center gap-1 py-1 font-mono text-[10px] tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground touch-manipulation"
                             >
                               Case study
                               <ArrowRightIcon className="size-3" aria-hidden />
@@ -812,7 +812,7 @@ export function CalendlyCarousel({
                               href={item.sourceHref}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 font-mono text-[10px] tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground"
+                              className="inline-flex items-center gap-1 py-1 font-mono text-[10px] tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground touch-manipulation"
                             >
                               Source
                               <ExternalLinkIcon
@@ -862,7 +862,7 @@ export function CalendlyCarousel({
           type="button"
           aria-label="Previous project"
           onClick={handlePrev}
-          className="flex size-7 cursor-pointer items-center justify-center rounded-[4px] border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="flex size-9 sm:size-7 cursor-pointer items-center justify-center rounded-[4px] border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none touch-manipulation"
         >
           <ArrowLeftIcon className="size-3.5" aria-hidden />
         </button>
@@ -888,7 +888,7 @@ export function CalendlyCarousel({
                 aria-label={`Show ${item.author}`}
                 tabIndex={isSelected ? 0 : -1}
                 className={cn(
-                  "h-[8px] cursor-pointer overflow-hidden rounded-[3px] border-0 p-0 transition-[width] duration-300 ease-out outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "h-[8px] cursor-pointer overflow-hidden rounded-[3px] border-0 p-0 transition-[width] duration-300 ease-out outline-none focus-visible:ring-2 focus-visible:ring-ring touch-manipulation",
                   isSelected
                     ? "w-[80px] bg-secondary"
                     : "w-[8px] bg-secondary hover:bg-muted-foreground/30"
@@ -913,7 +913,7 @@ export function CalendlyCarousel({
           type="button"
           aria-label="Next project"
           onClick={handleNext}
-          className="flex size-7 cursor-pointer items-center justify-center rounded-[4px] border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="flex size-9 sm:size-7 cursor-pointer items-center justify-center rounded-[4px] border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none touch-manipulation"
         >
           <ArrowRightIcon className="size-3.5" aria-hidden />
         </button>

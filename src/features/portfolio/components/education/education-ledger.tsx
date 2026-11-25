@@ -43,21 +43,21 @@ export function EducationLedger({ education }: { education: Education[] }) {
   ]
 
   return (
-    <dl className="screen-line-bottom grid grid-cols-2 gap-y-1 px-4 py-3 sm:grid-cols-4">
+    <dl className="screen-line-bottom grid grid-cols-2 gap-y-1 p-3  sm:grid-cols-4 sm:px-4">
       {cells.map((cell, index) => (
         <div
           key={`${cell.value}-${cell.label}`}
           className={cn(
-            "flex items-baseline gap-1.5 pr-4",
+            "flex items-baseline gap-1.5 pr-3 sm:pr-4",
             index === 0
               ? ""
               : index % 2 === 0
                 ? "sm:border-l sm:border-dashed sm:border-line sm:pl-4"
-                : "border-l border-dashed border-line pl-4"
+                : "border-l border-dashed border-line pl-3 sm:pl-4"
           )}
         >
           <dt className="sr-only">{cell.label}</dt>
-          <dd className="flex items-baseline gap-1.5">
+          <dd className="flex min-w-0 flex-wrap items-baseline gap-1.5">
             <span className="font-mono font-semibold whitespace-nowrap tabular-nums">
               {cell.value}
             </span>

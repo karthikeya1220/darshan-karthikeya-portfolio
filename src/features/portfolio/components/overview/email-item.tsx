@@ -47,10 +47,11 @@ export function EmailItem({ emailB64 }: EmailItemProps) {
         <MailIcon />
       </IntroItemIcon>
 
-      <IntroItemContent className="flex">
+      <IntroItemContent className="flex min-w-0">
         <IntroItemLink
           id={id}
           href={isClient ? `mailto:${emailDecoded}` : ""}
+          className="break-all"
           suppressHydrationWarning
         >
           {isClient ? emailDecoded : ""}

@@ -36,6 +36,7 @@ export function Contact() {
             <IntroItemContent>
               <IntroItemLink
                 href={`mailto:${atob(USER.emailB64)}`}
+                className="break-all"
                 aria-label={`Email: ${atob(USER.emailB64)}`}
               >
                 {atob(USER.emailB64)}
@@ -62,10 +63,10 @@ export function Contact() {
           </IntroItem>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2.5">
           <a
             href={`mailto:${atob(USER.emailB64)}`}
-            className="inline-flex h-9 items-center gap-2 rounded-full bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-foreground px-5 text-sm font-medium text-background transition-all hover:opacity-90 touch-manipulation active:scale-[0.98]"
           >
             <MailIcon className="size-4" />
             Send an email
@@ -74,7 +75,7 @@ export function Contact() {
             href="https://linkedin.com/in/darshan-karthikeya"
             target="_blank"
             rel="noopener"
-            className="inline-flex h-9 items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors hover:bg-accent"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border px-5 text-sm font-medium transition-colors hover:bg-accent touch-manipulation active:scale-[0.98]"
           >
             <ExternalLinkIcon className="size-4" />
             LinkedIn

@@ -36,7 +36,7 @@ export function CurriculumMap({
                   key={skill}
                   className="flex items-baseline gap-2 py-0.5 font-mono text-xs text-muted-foreground"
                 >
-                  <span className="whitespace-nowrap">{skill}</span>
+                  <span className="min-w-0 wrap-break-word">{skill}</span>
                   <span
                     className="min-w-4 flex-1 border-b border-dotted border-line"
                     aria-hidden

@@ -83,7 +83,7 @@ function TechBadge({ item }: { item: TechStackType }) {
         setActiveFilter(isActive ? null : item.title)
       }}
       className={[
-        "flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full px-2 font-mono text-xs inset-ring-1 inset-ring-border transition-[opacity,background-color] duration-200 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80",
+        "flex h-7 sm:h-(--badge-height) items-center justify-center gap-1.25 rounded-full px-2.5 font-mono text-xs inset-ring-1 inset-ring-border transition-[opacity,background-color] duration-200 touch-manipulation [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80",
         isActive
           ? "bg-foreground text-background inset-ring-foreground"
           : "bg-zinc-50/80 text-foreground dark:bg-zinc-900/80",

@@ -29,12 +29,12 @@ export function InsightsChart({
       {series.length > 0 ? (
         <LineChart
           className={cn(
-            "sm:aspect-3/1!",
+            "aspect-2/1 sm:aspect-3/1!",
             "[--chart-1:var(--color-zinc-900)] [--chart-2:var(--color-zinc-400)]",
             "dark:[--chart-1:var(--color-zinc-100)] dark:[--chart-2:var(--color-zinc-600)]"
           )}
           data={series}
-          margin={{ top: 16, right: 32, bottom: 40, left: 32 }}
+          margin={{ top: 16, right: 16, bottom: 36, left: 16 }}
         >
           <Grid horizontal />
           <Line

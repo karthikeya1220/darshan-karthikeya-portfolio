@@ -9,7 +9,10 @@ export function IntroItem({
 }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("flex items-center gap-4 font-mono text-sm", className)}
+      className={cn(
+        "flex min-w-0 items-center gap-3 sm:gap-4 font-mono text-xs sm:text-sm",
+        className
+      )}
       {...props}
     />
   )
@@ -19,7 +22,9 @@ export function IntroItemContent({
   className,
   ...props
 }: React.ComponentProps<"p">) {
-  return <p className={cn("text-balance", className)} {...props} />
+  return (
+    <p className={cn("text-balance min-w-0 wrap-break-word", className)} {...props} />
+  )
 }
 
 export function IntroItemLink({
@@ -28,7 +33,7 @@ export function IntroItemLink({
 }: React.ComponentProps<"a">) {
   return (
     <a
-      className={cn("link", className)}
+      className={cn("link min-w-0 break-all sm:break-normal", className)}
       target="_blank"
       rel="noopener"
       {...props}

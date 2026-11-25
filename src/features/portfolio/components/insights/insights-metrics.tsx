@@ -69,8 +69,8 @@ function Metric({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         // `justify-between` keeps values aligned across a row when a label
         // wraps to two lines in a narrow column.
-        "flex flex-col justify-between gap-2 p-4",
-        "max-sm:nth-[2n+1]:screen-line-bottom sm:nth-[3n+1]:screen-line-bottom",
+        "flex flex-col justify-between gap-2 p-3 sm:p-4",
+        "max-md:nth-[-n+2]:border-b max-md:border-line",
         className
       )}
       {...props}

@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown"
+
 import { HelloTitle } from "@/features/portfolio/components/hello-title"
 import {
   Panel,
@@ -18,7 +20,7 @@ export function Hello() {
 
       <PanelContent>
         <div className="typeset typeset-description [&_li]:ps-0.5 [&_ul]:ps-3.5">
-          <p className="font-serif">{USER.about}</p>
+          <ReactMarkdown>{USER.about}</ReactMarkdown>
         </div>
       </PanelContent>
 

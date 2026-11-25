@@ -48,11 +48,14 @@ export function LeadershipLoadChart({
   const maxCount = Math.max(...counts, 1)
   const minCount = Math.min(...counts)
 
-  const column = "flex w-20 flex-col items-center"
+  const column = "flex w-12 sm:w-20 shrink-0 flex-col items-center"
 
   return (
     <figure className="px-4 pt-4">
-      <div className="flex justify-center gap-6" aria-hidden>
+      <div
+        className="no-scrollbar flex justify-center gap-2 overflow-x-auto pb-1 min-[400px]:gap-3 sm:gap-6"
+        aria-hidden
+      >
         {years.map((year, index) => (
           <div key={year} className={column}>
             <span className="mb-1.5 font-mono text-xs font-semibold tabular-nums">
@@ -80,7 +83,10 @@ export function LeadershipLoadChart({
 
       <div className="border-b border-line" aria-hidden />
 
-      <div className="flex justify-center gap-6 pt-1.5" aria-hidden>
+      <div
+        className="no-scrollbar flex justify-center gap-2 overflow-x-auto pt-1.5 min-[400px]:gap-3 sm:gap-6"
+        aria-hidden
+      >
         {years.map((year) => (
           <span
             key={year}

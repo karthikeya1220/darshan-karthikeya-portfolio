@@ -60,7 +60,7 @@ export function TenureChart({ experiences }: { experiences: Experience[] }) {
 
   return (
     <figure className="px-4 pt-4">
-      <div className="grid grid-cols-[6.5rem_1fr] items-end gap-x-3 pb-1">
+      <div className="grid grid-cols-[4.5rem_1fr] items-end gap-x-2 pb-1 min-[400px]:grid-cols-[5.5rem_1fr] sm:grid-cols-[6.5rem_1fr] sm:gap-x-3">
         <div aria-hidden />
         <div className="relative h-5" aria-hidden>
           {monthTicks.map((date) => (
@@ -104,7 +104,7 @@ export function TenureChart({ experiences }: { experiences: Experience[] }) {
               key={row.id}
               href={`#experience-${row.id}`}
               aria-label={`Jump to ${row.name}`}
-              className="group grid grid-cols-[6.5rem_1fr] items-center gap-x-3 outline-none focus-visible:inset-ring-2 focus-visible:inset-ring-ring/50"
+              className="group grid grid-cols-[4.5rem_1fr] items-center gap-x-2 outline-none focus-visible:inset-ring-2 focus-visible:inset-ring-ring/50 min-[400px]:grid-cols-[5.5rem_1fr] sm:grid-cols-[6.5rem_1fr] sm:gap-x-3"
             >
               <span className="truncate text-right text-xs text-muted-foreground transition-colors group-hover:text-foreground">
                 {row.name}

@@ -177,7 +177,7 @@ function StatusRow({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex items-baseline gap-2 text-xs">
+    <div className="flex flex-wrap sm:flex-nowrap items-baseline gap-x-2 gap-y-0.5 text-xs">
       <span className="font-mono tracking-widest text-muted-foreground/70 uppercase">
         {label}
       </span>
@@ -185,7 +185,7 @@ function StatusRow({
         aria-hidden
         className="min-w-4 flex-1 -translate-y-1 border-b border-dotted border-border"
       />
-      <span className="font-mono text-foreground">{children}</span>
+      <span className="font-mono text-foreground min-w-0 wrap-break-word">{children}</span>
     </div>
   )
 }

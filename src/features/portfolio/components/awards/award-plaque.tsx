@@ -37,14 +37,14 @@ export function AwardPlaque({ award }: { award: Award }) {
         </h3>
       </div>
 
-      <dl className="flex flex-wrap items-center gap-x-2 px-4 font-mono text-xs text-muted-foreground">
+      <dl className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 font-mono text-xs text-muted-foreground">
         <div>
           <dt className="sr-only">Prize</dt>
           <dd>{award.prize}</dd>
         </div>
 
         <Separator
-          className="data-vertical:h-3.5 data-vertical:self-center"
+          className="hidden min-[380px]:inline-block data-vertical:h-3.5 data-vertical:self-center"
           orientation="vertical"
           aria-hidden
         />
@@ -59,7 +59,7 @@ export function AwardPlaque({ award }: { award: Award }) {
         </div>
 
         <Separator
-          className="data-vertical:h-3.5 data-vertical:self-center"
+          className="hidden min-[380px]:inline-block data-vertical:h-3.5 data-vertical:self-center"
           orientation="vertical"
           aria-hidden
         />
@@ -82,7 +82,7 @@ export function AwardPlaque({ award }: { award: Award }) {
             <TooltipTrigger
               render={
                 <a
-                  className="flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground"
+                  className="flex items-center gap-1.5 py-1 font-mono text-xs text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground touch-manipulation"
                   href={award.referenceLink}
                   target="_blank"
                   rel="noopener"

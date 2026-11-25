@@ -31,12 +31,12 @@ export function ProfileHeader() {
         </div>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex min-w-0 flex-col">
         <div className="z-1 mt-auto">
           <HeroDimensionLine />
 
-          <div className="flex items-center gap-2 pl-4">
-            <h1 className="text-[clamp(2rem,6.5vw,3.25rem)]/[0.98] font-medium tracking-tight">
+          <div className="flex items-center gap-2 pl-3 sm:pl-4">
+            <h1 className="text-[clamp(1.625rem,5.6vw,3.25rem)]/[0.98] font-medium tracking-tight wrap-break-word">
               {USER.displayName}
             </h1>
 
@@ -47,7 +47,7 @@ export function ProfileHeader() {
             <VerifiedLeader />
           </div>
 
-          <FlipSentences className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
+          <FlipSentences className="min-h-13 sm:min-h-9 h-auto border-t border-line py-1.5 pl-3 sm:pl-4">
             {USER.flipSentences}
           </FlipSentences>
         </div>

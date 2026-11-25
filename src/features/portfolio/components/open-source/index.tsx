@@ -122,7 +122,7 @@ function PrincipleCard({
   return (
     <div className="rounded-md border bg-muted/30 p-3.5 transition-colors hover:bg-muted/60">
       <p className="mb-1 text-sm font-medium">{principle.label}</p>
-      <p className="text-xs leading-relaxed text-muted-foreground">
+      <p className="text-xs/relaxed  text-muted-foreground">
         {principle.description}
       </p>
     </div>

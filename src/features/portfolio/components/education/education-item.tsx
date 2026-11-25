@@ -53,7 +53,7 @@ export function EducationItem({ item }: { item: Education }) {
             <h3 className="flex-1 font-medium text-balance">{item.school}</h3>
           </div>
 
-          <dl className="flex flex-wrap items-center gap-x-2 pl-9 text-sm text-muted-foreground">
+          <dl className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-xs sm:text-sm text-muted-foreground">
             <div>
               <dt className="sr-only">Study period</dt>
               <dd className="flex items-center gap-0.5 tabular-nums">
@@ -61,7 +61,7 @@ export function EducationItem({ item }: { item: Education }) {
                 <span className="font-mono">—</span>
                 {isOngoing ? (
                   <InfinityIcon
-                    className="size-4.5 translate-y-[0.5px]"
+                    className="size-4 translate-y-[0.5px] sm:size-4.5"
                     aria-label="Present"
                     strokeWidth={1.5}
                   />
@@ -74,7 +74,7 @@ export function EducationItem({ item }: { item: Education }) {
             {item.degree && (
               <>
                 <Separator
-                  className="data-vertical:h-4 data-vertical:self-center"
+                  className="data-vertical:h-3.5 data-vertical:self-center"
                   orientation="vertical"
                   aria-hidden
                 />
@@ -89,7 +89,7 @@ export function EducationItem({ item }: { item: Education }) {
             {item.fieldOfStudy && (
               <>
                 <Separator
-                  className="data-vertical:h-4 data-vertical:self-center"
+                  className="data-vertical:h-3.5 data-vertical:self-center"
                   orientation="vertical"
                   aria-hidden
                 />

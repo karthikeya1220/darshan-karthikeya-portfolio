@@ -58,7 +58,7 @@ export function ExperiencePositionItem({
           <h4 className="flex-1 font-medium text-balance">{position.title}</h4>
         </div>
 
-        <dl className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <dl className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-9 text-xs sm:text-sm text-muted-foreground">
           {position.employmentType && (
             <>
               <div>
@@ -66,7 +66,7 @@ export function ExperiencePositionItem({
                 <dd>{position.employmentType}</dd>
               </div>
               <Separator
-                className="data-vertical:h-4 data-vertical:self-center"
+                className="data-vertical:h-3.5 data-vertical:self-center"
                 orientation="vertical"
                 aria-hidden
               />
@@ -80,7 +80,7 @@ export function ExperiencePositionItem({
               <span className="font-mono">—</span>
               {isOngoing ? (
                 <InfinityIcon
-                  className="size-4.5 translate-y-[0.5px]"
+                  className="size-4 translate-y-[0.5px] sm:size-4.5"
                   aria-label="Present"
                   strokeWidth={1.5}
                 />
@@ -93,7 +93,7 @@ export function ExperiencePositionItem({
           {duration && (
             <>
               <Separator
-                className="data-vertical:h-4 data-vertical:self-center"
+                className="data-vertical:h-3.5 data-vertical:self-center"
                 orientation="vertical"
                 aria-hidden
               />
@@ -106,25 +106,25 @@ export function ExperiencePositionItem({
         </dl>
 
         {Array.isArray(position.metrics) && position.metrics.length > 0 && (
-          <dl className="mt-2 grid grid-cols-2 gap-y-1 pl-9 sm:grid-cols-3">
+          <dl className="mt-2 grid grid-cols-2 gap-y-1.5 pl-9 sm:grid-cols-3">
             {position.metrics.map((metric, index) => (
               <div
                 key={index}
                 className={cn(
-                  "flex items-baseline gap-1.5 pr-4",
+                  "flex min-w-0 items-baseline gap-1.5 pr-2 sm:pr-4",
                   index === 0
                     ? ""
                     : index % 2 === 0
                       ? "sm:border-l sm:border-dashed sm:border-line sm:pl-4"
-                      : "border-l border-dashed border-line pl-4"
+                      : "border-l border-dashed border-line pl-2 sm:pl-4"
                 )}
               >
                 <dt className="sr-only">{metric.label}</dt>
-                <dd className="flex items-baseline gap-1.5">
-                  <span className="font-mono font-semibold whitespace-nowrap tabular-nums">
+                <dd className="flex min-w-0 flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
+                  <span className="font-mono text-xs font-semibold whitespace-nowrap tabular-nums sm:text-sm">
                     {metric.value}
                   </span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-xs text-muted-foreground">
                     {metric.label}
                   </span>
                 </dd>
